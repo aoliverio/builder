@@ -1,6 +1,6 @@
 {
-    "name": "your-name-here/Bootstrap3Bake",
-    "description": "Bootstrap3Bake plugin for CakePHP",
+    "name": "aoliverio/builder",
+    "description": "Bake template for CakePHP 3.x",
     "type": "cakephp-plugin",
     "require": {
         "php": ">=5.4.16",
@@ -11,12 +11,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Bootstrap3Bake\\": "src"
+            "Builder\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Bootstrap3Bake\\Test\\": "tests",
+            "Builder\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     }
