@@ -2,6 +2,14 @@
     "name": "aoliverio/builder",
     "description": "Bake template for CakePHP 3.x",
     "type": "cakephp-plugin",
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"Antonio Oliverio",
+            "role":"Author",
+            "homepage":"http://www.aoliverio.com/"
+        }
+    ],
     "require": {
         "php": ">=5.4.16",
         "cakephp/cakephp": "~3.0"
