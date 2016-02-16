@@ -17,33 +17,34 @@
 * @license       http://www.opensource.org/licenses/mit-license.php MIT License
 */
 use Cake\Utility\Inflector;
-
 $defaultModel = $name;
 %>
 <?php
+
 namespace <%= $namespace %>\Controller<%= $prefix %>;
 
 use <%= $namespace %>\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * <%= $name %> Controller
  *
  * @property \<%= $namespace %>\Model\Table\<%= $defaultModel %>Table $<%= $defaultModel %>
-  <%
+<%
   foreach ($components as $component):
   $classInfo = $this->Bake->classInfo($component, 'Controller/Component', 'Component');
-  %>
+%>
  * @property <%= $classInfo['fqn'] %> $<%= $classInfo['name'] %>
-  <% endforeach; %>
+<% endforeach; %>
  */
-class <%= $name %>Controller extends AppController
-{
+class <%= $name %>Controller extends AppController {
 <%
 echo $this->Bake->arrayProperty('helpers', $helpers, ['indent' => false]);
 echo $this->Bake->arrayProperty('components', $components, ['indent' => false]);
 foreach($actions as $action) {
 echo $this->element('Controller/' . $action);
 }
+echo $this->element('Controller/filter');
 %>
 
 }

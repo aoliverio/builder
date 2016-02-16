@@ -12,6 +12,10 @@
  * @since         0.1.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+ 
+$belongsTo = $this->Bake->aliasExtractor($modelObj, 'BelongsTo');
+$belongsToMany = $this->Bake->aliasExtractor($modelObj, 'BelongsToMany');
+$compact = ["'" . $singularName . "'"];
 %>
 
     /**
@@ -19,16 +23,15 @@
      *
      * @return void
      */
-    public function index()
-    {
-<% $belongsTo = $this->Bake->aliasExtractor($modelObj, 'BelongsTo'); %>
+    public function index() {
+        $this-><%= $currentModelName %> = TableRegistry::get('<%= $namespace %>.<%= $currentModelName %>');
+        $query = $this-><%= $currentModelName %>->find('all');
 <% if ($belongsTo): %>
-        $this->paginate = [
-            'contain' => [<%= $this->Bake->stringifyList($belongsTo, ['indent' => false]) %>],
-            'limit' => 1000,
-            'maxLimit' => 1000
-        ];
+        $query->contain([<%= $this->Bake->stringifyList($belongsTo, ['indent' => false]) %>]);
 <% endif; %>
-        $this->set('data', $this->paginate($this-><%= $currentModelName %>));
+        $query->where($this->filteredWhereConditions());        
+        $query->limit(1000);
+        $this->set('data', $query->toArray());
         $this->set('_serialize', ['data']);
     }
+    

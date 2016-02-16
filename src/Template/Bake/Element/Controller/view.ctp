@@ -27,11 +27,11 @@ $allAssociations = array_merge(
      * @return void
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function view($id = null)
-    {
+    public function view($id = null) {
         $<%= $singularName%> = $this-><%= $currentModelName %>->get($id, [
             'contain' => [<%= $this->Bake->stringifyList($allAssociations, ['indent' => false]) %>]
         ]);
         $this->set('<%= $singularName %>', $<%= $singularName %>);
         $this->set('_serialize', ['<%= $singularName %>']);
     }
+    
