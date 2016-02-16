@@ -61,49 +61,50 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
     </div>
     <div class="panel-body">
         <div class="row">
-            <% if ($groupedFields['string']) : %>
+<% if ($groupedFields['string']) : %>
             <div class="col-md-6 columns strings">
-                <% foreach ($groupedFields['string'] as $field) : %>
-                <% if (isset($associationFields[$field])) :
-                $details = $associationFields[$field];
-                %>
+<% 
+foreach ($groupedFields['string'] as $field) :
+if (isset($associationFields[$field])) :
+$details = $associationFields[$field];
+%>
                 <label class="subheader"><?= __('<%= Inflector::humanize($details['property']) %>') ?></label>
                 <p><?= $<%= $singularVar %>->has('<%= $details['property'] %>') ? $this->Html->link($<%= $singularVar %>-><%= $details['property'] %>-><%= $details['displayField'] %>, ['controller' => '<%= $details['controller'] %>', 'action' => 'view', $<%= $singularVar %>-><%= $details['property'] %>-><%= $details['primaryKey'][0] %>]) : '' ?></p>
-                <% else : %>
+<% else : %>
                 <label class="subheader"><?= __('<%= Inflector::humanize($field) %>') ?></label>
                 <p><?= h($<%= $singularVar %>-><%= $field %>) ?></p>
                 <hr/>
-                <% endif; %>
-                <% endforeach; %>
+<% endif; %>
+<% endforeach; %>
             </div>
-            <% endif; %>
-            <% if ($groupedFields['number']) : %>
+<% endif; %>
+<% if ($groupedFields['number']) : %>
             <div class="col-md-2 columns numbers end">
-                <% foreach ($groupedFields['number'] as $field) : %>
+<% foreach ($groupedFields['number'] as $field) : %>
                 <label class="subheader"><?= __('<%= Inflector::humanize($field) %>') ?></label>
                 <p><?= $this->Number->format($<%= $singularVar %>-><%= $field %>) ?></p>
                 <hr/>
-                <% endforeach; %>
+<% endforeach; %>
             </div>
-            <% endif; %>
-            <% if ($groupedFields['date']) : %>
+<% endif; %>
+<% if ($groupedFields['date']) : %>
             <div class="col-md-2 columns dates end">
-                <% foreach ($groupedFields['date'] as $field) : %>
+<% foreach ($groupedFields['date'] as $field) : %>
                 <label class="subheader"><%= "<%= __('" . Inflector::humanize($field) . "') %>" %></label>
                 <p><?= h($<%= $singularVar %>-><%= $field %>) ?></p>
                 <hr/>
-                <% endforeach; %>
+<% endforeach; %>
             </div>
-            <% endif; %>
-            <% if ($groupedFields['boolean']) : %>
+<% endif; %>
+<% if ($groupedFields['boolean']) : %>
             <div class="col-md-2 columns booleans end">
-                <% foreach ($groupedFields['boolean'] as $field) : %>
+<% foreach ($groupedFields['boolean'] as $field) : %>
                 <label class="subheader"><?= __('<%= Inflector::humanize($field) %>') ?></label>
                 <p><?= $<%= $singularVar %>-><%= $field %> ? __('Yes') : __('No'); ?></p>
                 <hr/>
-                <% endforeach; %>
+<% endforeach; %>
             </div>
-            <% endif; %>
+<% endif; %>
         </div>
     </div>
 </div>

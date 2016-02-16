@@ -54,13 +54,13 @@ endforeach;
      * This function is used to filter select options
      */
     public function filteredSelectOptions() {
-<% if(count() > 0) { %>
+<% if(count($ASSOCIATION) > 0) { %>
 <% foreach ($ASSOCIATION as $row): %>
         $<%= $row['otherPlural'] %> = $this-><%= $currentModelName %>-><%= $row['otherName'] %>->find('list', ['limit' => 200]);
 <% endforeach; %>
-        $this->set(compact(<%= join(', ', $compact) %>));
+        $this->set(compact(<%= join(', ', $COMPACT) %>));
 <% } else { %>
-
+        return false;
 <% } %>
     }
     

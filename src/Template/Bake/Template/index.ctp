@@ -37,51 +37,49 @@ return !in_array($schema->columnType($field), ['binary', 'text']);
                     <th class="check no-sorting">
                         <input id="checkall" class="" type="checkbox" name="" value="" />
                     </th>
-                    <% foreach ($fields as $field): %>
+<% foreach ($fields as $field): %>
                     <th><?= __('<%= Inflector::humanize($field) %>') ?></th>
-                    <% endforeach; %>
+<% endforeach; %>
                     <th class="actions no-sorting"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($data as $<%= $singularVar %>): ?>
-                <tr>
-                    <td><input id="" class="check" type="checkbox" name="" value="" /></td>
-                    <% foreach ($fields as $field) {
-                    $isKey = false;
-                    if (!empty($associations['BelongsTo'])) {
-                    foreach ($associations['BelongsTo'] as $alias => $details) {
-                    if ($field === $details['foreignKey']) {
-                    $isKey = true;
-                    %>
-                    <td>
-                        <?= $<%= $singularVar %>->has('<%= $details['property'] %>') ? $this->Html->link($<%= $singularVar %>-><%= $details['property'] %>-><%= $details['displayField'] %>, ['controller' => '<%= $details['controller'] %>', 'action' => 'view', $<%= $singularVar %>-><%= $details['property'] %>-><%= $details['primaryKey'][0] %>]) : '' ?>
-                    </td>
-                    <%
-                    break;
-                    }
-                    }
-                    }
-                    if ($isKey !== true) {
-                    if (!in_array($schema->columnType($field), ['integer', 'biginteger', 'decimal', 'float'])) {
-                    %>
-                    <td><?= h($<%= $singularVar %>-><%= $field %>) ?></td>
-                    <%
-                    } else {
-                    %>
-                    <td><?= $this->Number->format($<%= $singularVar %>-><%= $field %>) ?></td>
-                    <%
-                    }
-                    }
-                    }
-                    $pk = '$' . $singularVar . '->' . $primaryKey[0];
-                    %>
-                    <td class="actions text-right">
-                        <?= $this->Html->link('<span class="glyphicon glyphicon-zoom-in"></span><span class="sr-only">' . __('View') . '</span>', ['controller' => '<%= $singularVar %>', 'action' => 'view', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-default', 'title' => __('View')]) ?>
-                        <?= $this->Html->link('<span class="glyphicon glyphicon-pencil"></span><span class="sr-only">' . __('Edit') . '</span>', ['controller' => '<%= $singularVar %>', 'action' => 'edit', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-default', 'title' => __('Edit'), 'data-toggle' => 'modal', 'data-target' => '#myModal']) ?>
-                        <?= $this->Html->link('<span class="glyphicon glyphicon-trash"></span><span class="sr-only">' . __('Delete') . '</span>', ['controller' => '<%= $singularVar %>', 'action' => 'delete', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-danger', 'title' => __('Delete'), 'data-toggle' => 'modal', 'data-target' => '#myModal']) ?>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><input id="" class="check" type="checkbox" name="" value="" /></td>
+<% foreach ($fields as $field) {
+$isKey = false;
+if (!empty($associations['BelongsTo'])) {
+foreach ($associations['BelongsTo'] as $alias => $details) {
+if ($field === $details['foreignKey']) {
+$isKey = true;
+%>
+                        <td><?= $<%= $singularVar %>->has('<%= $details['property'] %>') ? $this->Html->link($<%= $singularVar %>-><%= $details['property'] %>-><%= $details['displayField'] %>, ['controller' => '<%= $details['controller'] %>', 'action' => 'view', $<%= $singularVar %>-><%= $details['property'] %>-><%= $details['primaryKey'][0] %>]) : '' ?></td>
+<%
+break;
+}
+}
+}
+if ($isKey !== true) {
+if (!in_array($schema->columnType($field), ['integer', 'biginteger', 'decimal', 'float'])) {
+%>
+                        <td><?= h($<%= $singularVar %>-><%= $field %>) ?></td>
+<%
+} else {
+%>
+                        <td><?= $this->Number->format($<%= $singularVar %>-><%= $field %>) ?></td>
+<%
+}
+}
+}
+$pk = '$' . $singularVar . '->' . $primaryKey[0];
+%>
+                        <td class="actions text-right">
+                            <?= $this->Html->link('<span class="glyphicon glyphicon-zoom-in"></span><span class="sr-only">' . __('View') . '</span>', ['controller' => '<%= $singularVar %>', 'action' => 'view', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-default', 'title' => __('View')]) ?>
+                            <?= $this->Html->link('<span class="glyphicon glyphicon-pencil"></span><span class="sr-only">' . __('Edit') . '</span>', ['controller' => '<%= $singularVar %>', 'action' => 'edit', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-default', 'title' => __('Edit'), 'data-toggle' => 'modal', 'data-target' => '#myModal']) ?>
+                            <?= $this->Html->link('<span class="glyphicon glyphicon-trash"></span><span class="sr-only">' . __('Delete') . '</span>', ['controller' => '<%= $singularVar %>', 'action' => 'delete', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-danger', 'title' => __('Delete'), 'data-toggle' => 'modal', 'data-target' => '#myModal']) ?>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

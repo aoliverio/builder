@@ -22,47 +22,33 @@ $fields = collection($fields)->filter(function($field) use ($schema) {
 <h3 class="page-header"><?= __('<%= Inflector::humanize($action) %> <%= $singularHumanName %>'); ?></h3>
 <div>
     <?= $this->Form->create($<%= $singularVar %>) ?>
-    <?php
-    <%
-    foreach ($fields as $field) {
-        if (in_array($field, $primaryKey)) {
-            continue;
-        }
-        if (isset($keyFields[$field])) {
-            $fieldData = $schema->column($field);
-            if (!empty($fieldData['null'])) {
-                %>
-            echo $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'label' => '<%= Inflector::humanize($field) %>', 'class' => 'form-control', 'empty' => true]);
-                <%
-            } else {
-                %>
-            echo $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'label' => '<%= Inflector::humanize($field) %>', 'class' => 'form-control']);
-                <%
-            }
-            continue;
-        }
-        if (!in_array($field, ['created', 'modified', 'created_user', 'modified_user'])) {
-            $fieldData = $schema->column($field);
-            if (($fieldData['type'] === 'date') && (!empty($fieldData['null']))) {
-                %>
-            echo $this->Form->input('<%= $field %>', ['label' => '<%= Inflector::humanize($field) %>', 'empty' => true, 'default' => '']);
-                <%
-            } else {
-                %>
-            echo $this->Form->input('<%= $field %>', ['label' => '<%= Inflector::humanize($field) %>', 'class' => 'form-control']);
-                <%
-            }
-        }
-    }
-    if (!empty($associations['BelongsToMany'])) {
-        foreach ($associations['BelongsToMany'] as $assocName => $assocData) {
-            %>
-            echo $this->Form->input('<%= $assocData['property'] %>._ids', ['options' => $<%= $assocData['variable'] %>, 'class' => 'form-control']);
-            <%
-        }
-    }
-    %>
-    ?>
+<% foreach ($fields as $field) : %>
+<% if (in_array($field, $primaryKey)) { %>
+<% continue; %>
+<% } %>
+<% if (isset($keyFields[$field])) { %>
+<% $fieldData = $schema->column($field); %>
+<% if (!empty($fieldData['null'])) { %>
+    <?= $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'label' => '<%= Inflector::humanize($field) %>', 'class' => 'form-control', 'empty' => true]); ?>
+<% } else { %>
+    <?= $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'label' => '<%= Inflector::humanize($field) %>', 'class' => 'form-control']); ?>
+<% } %>
+<% continue; %>
+<% } %>
+<% if (!in_array($field, ['created', 'modified', 'created_user', 'modified_user'])) { %>
+<% $fieldData = $schema->column($field); %>
+<% if (($fieldData['type'] === 'date') && (!empty($fieldData['null']))) { %>
+    <?= $this->Form->input('<%= $field %>', ['label' => '<%= Inflector::humanize($field) %>', 'empty' => true, 'default' => '']); ?>
+        <% } else { %>
+    <?= $this->Form->input('<%= $field %>', ['label' => '<%= Inflector::humanize($field) %>', 'class' => 'form-control']); ?>
+<% } %>
+<% } %>
+<% endforeach; %>
+<% if (!empty($associations['BelongsToMany'])) { %>
+<% foreach ($associations['BelongsToMany'] as $assocName => $assocData) : %>
+    <?= $this->Form->input('<%= $assocData['property'] %>._ids', ['options' => $<%= $assocData['variable'] %>, 'class' => 'form-control']); ?>
+<% endforeach; %>
+<% } %>
     <hr/>
     <div class="text-center">
         <?= $this->Form->button(__('Save'), ['class' => 'btn btn-success']) ?>  
