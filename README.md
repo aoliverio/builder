@@ -1,4 +1,4 @@
-# Builder plugin for CakePHP 3.x
+# Builder is a plugin for CakePHP 3.x application
 
 ## Installation
 
@@ -7,5 +7,5 @@ You can install this plugin into your CakePHP application using [composer](http:
 The recommended way to install composer packages is:
 
 ```
-composer require aoliverio/Builder
+composer require aoliverio/builder
 ```
