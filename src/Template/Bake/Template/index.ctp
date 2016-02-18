@@ -25,8 +25,8 @@ return !in_array($schema->columnType($field), ['binary', 'text']);
     <div class="panel-heading">
         <span class="pull-right">
             <small><?= __('Actions:'); ?></small>
-            <a class="btn btn-xs" href="<?= $this->Url->build(['controller' => '<%= Inflector::humanize($pluralVar) %>', 'action' => 'filter']) ?>" data-toggle="modal" data-target="#myModal"><i class="fa fa-filter"></i> <?= __('Filter') ?></a>
-            <a class="btn btn-xs" href="<?= $this->Url->build(['controller' => '<%= Inflector::humanize($pluralVar) %>', 'action' => 'add']) ?>" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> <?= __('Add') ?></a>
+            <a class="btn btn-xs" href="<?= $this->Url->build(['controller' => '<%= Inflector::slug($pluralVar) %>', 'action' => 'filter']) ?>" data-toggle="modal" data-target="#myModal"><i class="fa fa-filter"></i> <?= __('Filter') ?></a>
+            <a class="btn btn-xs" href="<?= $this->Url->build(['controller' => '<%= Inflector::slug($pluralVar) %>', 'action' => 'add']) ?>" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> <?= __('Add') ?></a>
         </span>
         <h3 class="panel-title"><i class="fa fa-list"></i> <?= __('List of <%= $singularHumanName %>'); ?></h3>
     </div>
@@ -75,9 +75,9 @@ if (!in_array($schema->columnType($field), ['integer', 'biginteger', 'decimal', 
 $pk = '$' . $singularVar . '->' . $primaryKey[0];
 %>
                         <td class="actions text-right">
-                            <?= $this->Html->link('<span class="glyphicon glyphicon-zoom-in"></span><span class="sr-only">' . __('View') . '</span>', ['controller' => 'Inflector::humanize($pluralVar)', 'action' => 'view', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-default', 'title' => __('View')]) ?>
-                            <?= $this->Html->link('<span class="glyphicon glyphicon-pencil"></span><span class="sr-only">' . __('Edit') . '</span>', ['controller' => 'Inflector::humanize($pluralVar)', 'action' => 'edit', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-default', 'title' => __('Edit'), 'data-toggle' => 'modal', 'data-target' => '#myModal']) ?>
-                            <?= $this->Html->link('<span class="glyphicon glyphicon-trash"></span><span class="sr-only">' . __('Delete') . '</span>', ['controller' => 'Inflector::humanize($pluralVar)', 'action' => 'delete', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-danger', 'title' => __('Delete'), 'data-toggle' => 'modal', 'data-target' => '#myModal']) ?>
+                            <?= $this->Html->link('<span class="glyphicon glyphicon-zoom-in"></span><span class="sr-only">' . __('View') . '</span>', ['controller' => 'Inflector::slug($pluralVar)', 'action' => 'view', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-default', 'title' => __('View')]) ?>
+                            <?= $this->Html->link('<span class="glyphicon glyphicon-pencil"></span><span class="sr-only">' . __('Edit') . '</span>', ['controller' => 'Inflector::slug($pluralVar)', 'action' => 'edit', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-default', 'title' => __('Edit'), 'data-toggle' => 'modal', 'data-target' => '#myModal']) ?>
+                            <?= $this->Html->link('<span class="glyphicon glyphicon-trash"></span><span class="sr-only">' . __('Delete') . '</span>', ['controller' => 'Inflector::slug($pluralVar)', 'action' => 'delete', <%= $pk %>], ['escape' => false, 'class' => 'btn btn-xs btn-danger', 'title' => __('Delete'), 'data-toggle' => 'modal', 'data-target' => '#myModal']) ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
