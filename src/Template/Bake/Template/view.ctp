@@ -55,7 +55,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
     <div class="panel-heading">
         <span class="pull-right">
             <small><?= __('Actions:'); ?></small>
-            <a class="btn btn-xs" href="<?= $this->Url->build(['controller' => '<%= $singularVar %>', 'action' => 'index']) ?>"><i class="fa fa-list"></i> <?= __('List') ?></a>
+            <a class="btn btn-xs" href="<?= $this->Url->build(['controller' => '<%= Inflector::humanize($pluralVar) %>', 'action' => 'index']) ?>"><i class="fa fa-list"></i> <?= __('List') ?></a>
         </span>
         <h3 class="panel-title"><i class="fa fa-search-plus"></i> <?= __('<%= $singularHumanName %>'); ?></h3>
     </div>
