@@ -1,6 +1,6 @@
 {
     "name": "aoliverio/builder",
-    "description": "CakePHP 3.x plugin to generate beautiful and functional masks Bootstrap 3 style",
+    "description": "CakePHP 3.x plugin to generate beautiful and functional masks in Bootstrap 3 style",
     "type": "cakephp-plugin",
     "license":"MIT",
     "authors":[
