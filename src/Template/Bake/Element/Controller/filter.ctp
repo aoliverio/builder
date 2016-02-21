@@ -38,6 +38,8 @@ endforeach;
             $this->Flash->success('The <%= strtolower($singularHumanName) %> has been saved.');
             return $this->redirect(['action' => 'index']);
         }
+        $this->set(compact('<%= $singularName %>'));
+        $this->set('_serialize', ['<%= $singularName %>']);
     }
 
     /**
