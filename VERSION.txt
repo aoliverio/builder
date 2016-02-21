@@ -1,8 +1,1 @@
-Builder release 1.0.2
-
-Main news in this version:
-
-- Added version and license file
-- Fixed modal link in index and view template
-- Fixed filter template Notice
-- Added main Constructor element
+Release 1.0.2
