@@ -20,7 +20,7 @@ return !in_array($schema->columnType($field), ['binary', 'text']);
 })
 ->take(7);
 %>
-<?= $this->element('Builder.modal-index-template'); ?>
+<?= $this->element('Builder.constructor/default-index'); ?>
 <div class="panel panel-default">
     <div class="panel-heading">
         <span class="pull-right">
