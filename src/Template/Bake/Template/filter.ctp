@@ -1,5 +1,6 @@
 <?php $this->layout = null ?>
-<h3 class="page-header"><?= __('Filter <%= $singularHumanName %>'); ?></h3>
+<h4><?= __('Filter <%= $singularHumanName %>'); ?></h4>
+<hr/>
 <div>
     <?= $this->Form->create($<%= $singularVar %>); ?>
 <% if (!empty($associations['BelongsToMany'])) { %>

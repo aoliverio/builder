@@ -1,5 +1,6 @@
 <?php $this->layout = null ?>
-<h3 class="page-header"><?= __('Delete <%= $singularHumanName %>'); ?></h3>
+<h4><?= __('Delete <%= $singularHumanName %>'); ?></h4>
+<hr/>
 <div>
     <?= $this->Form->create($<%= $singularVar %>); ?>
     <p><?= __('Are you sure you want to delete # {0}?', $<%= $singularVar %>->id); ?></p>

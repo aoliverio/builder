@@ -19,7 +19,8 @@ $fields = collection($fields)->filter(function($field) use ($schema) {
 });
 %>
 <?php $this->layout = null ?>
-<h3 class="page-header"><?= __('<%= Inflector::humanize($action) %> <%= $singularHumanName %>'); ?></h3>
+<h4><?= __('<%= Inflector::humanize($action) %> <%= $singularHumanName %>'); ?></h4>
+<hr/>
 <div>
     <?= $this->Form->create($<%= $singularVar %>) ?>
 <% foreach ($fields as $field) : %>
