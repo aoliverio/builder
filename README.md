@@ -1,6 +1,6 @@
 # Builder for CakePHP 3.x
 
-Builder is a CakePHP 3.x plugin for Bake to generate code like Bootstrap 3 framework. 
+Builder is a CakePHP 3.x plugin for Bake to generate code Bootstrap 3 style. 
 
 Some of the highlights:
 
