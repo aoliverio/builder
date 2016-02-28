@@ -35,7 +35,7 @@ return !in_array($schema->columnType($field), ['binary', 'text']);
             <thead>
                 <tr>
                     <th class="check no-sorting">
-                        <input id="checkall" class="" type="checkbox" name="" value="" />
+                        <input id="checkall" class="check" type="checkbox" name="" value="" />
                     </th>
 <% foreach ($fields as $field): %>
                     <th><?= __('<%= Inflector::humanize($field) %>') ?></th>
