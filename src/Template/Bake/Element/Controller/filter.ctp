@@ -35,7 +35,7 @@ endforeach;
             } else {
                 $this->request->session()->write('<%= $currentModelName %>', $this->request->data);
             }
-            $this->Flash->success('The <%= strtolower($singularHumanName) %> has been saved.');
+            $this->Flash->success(__('The <%= strtolower($singularHumanName) %> has been saved.'));
             return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('<%= $singularName %>'));
