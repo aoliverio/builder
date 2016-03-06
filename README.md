@@ -25,4 +25,6 @@ Load plugin in your application:
 bin/cake plugin load Builder
 ```
 
-For more informations see the [wiki section](https://github.com/aoliverio/builder/wiki)
+## Docs
+
+For more informations see the [wiki section](https://github.com/aoliverio/builder/wiki) on github.
