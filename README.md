@@ -1,6 +1,6 @@
 # Builder for CakePHP 3.x
 
-Builder is a CakePHP 3.x plugin for Bake to generate code Bootstrap 3 style. 
+Builder is a CakePHP 3.x plugin used to generate code in Bootstrap 3 style. 
 
 Some of the highlights:
 
@@ -16,7 +16,13 @@ Some of the highlights:
 You can install this plugin into your CakePHP application using [composer](http://getcomposer.org).
 
 The recommended way to install composer packages is:
-
 ```
 composer require aoliverio/builder
 ```
+
+Load plugin in your application:
+```
+bin/cake plugin load Builder
+```
+
+For more informations see the [wiki section](https://github.com/aoliverio/builder/wiki)
