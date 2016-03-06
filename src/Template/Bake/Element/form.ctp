@@ -30,9 +30,9 @@ $fields = collection($fields)->filter(function($field) use ($schema) {
 <% if (isset($keyFields[$field])) { %>
 <% $fieldData = $schema->column($field); %>
 <% if (!empty($fieldData['null'])) { %>
-    <?= $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'label' => '<%= Inflector::humanize($field) %>', 'class' => 'form-control', 'empty' => true]); ?>
+    <?= $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'label' => '<%= Inflector::humanize($field) %>', 'empty' => true]); ?>
 <% } else { %>
-    <?= $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'label' => '<%= Inflector::humanize($field) %>', 'class' => 'form-control']); ?>
+    <?= $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'label' => '<%= Inflector::humanize($field) %>']); ?>
 <% } %>
 <% continue; %>
 <% } %>
@@ -41,13 +41,13 @@ $fields = collection($fields)->filter(function($field) use ($schema) {
 <% if (($fieldData['type'] === 'date') && (!empty($fieldData['null']))) { %>
     <?= $this->Form->input('<%= $field %>', ['label' => '<%= Inflector::humanize($field) %>', 'empty' => true, 'default' => '']); ?>
         <% } else { %>
-    <?= $this->Form->input('<%= $field %>', ['label' => '<%= Inflector::humanize($field) %>', 'class' => 'form-control']); ?>
+    <?= $this->Form->input('<%= $field %>', ['label' => '<%= Inflector::humanize($field) %>']); ?>
 <% } %>
 <% } %>
 <% endforeach; %>
 <% if (!empty($associations['BelongsToMany'])) { %>
 <% foreach ($associations['BelongsToMany'] as $assocName => $assocData) : %>
-    <?= $this->Form->input('<%= $assocData['property'] %>._ids', ['options' => $<%= $assocData['variable'] %>, 'class' => 'form-control']); ?>
+    <?= $this->Form->input('<%= $assocData['property'] %>._ids', ['options' => $<%= $assocData['variable'] %>]); ?>
 <% endforeach; %>
 <% } %>
     <hr/>
