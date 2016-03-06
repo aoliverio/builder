@@ -28,3 +28,11 @@ bin/cake plugin load Builder
 ## Docs
 
 For more informations see the [wiki section](https://github.com/aoliverio/builder/wiki) on github.
+
+## Bugs & Feedback
+
+[https://github.com/aoliverio/builder/issues](https://github.com/aoliverio/builder/issues).
+
+## License
+
+Copyright (c) 2015 Antonio Oliverio and licensed under [MIT License](http://opensource.org/licenses/mit-license.php).
