@@ -28,7 +28,7 @@ return !in_array($schema->columnType($field), ['binary', 'text']);
             <a class="btn btn-xs" href="<?= $this->Url->build(['controller' => '<%= Inflector::slug($pluralVar) %>', 'action' => 'filter']) ?>" data-toggle="modal" data-target="#myModal"><i class="fa fa-filter"></i> <?= __('Filter') ?></a>
             <a class="btn btn-xs" href="<?= $this->Url->build(['controller' => '<%= Inflector::slug($pluralVar) %>', 'action' => 'add']) ?>" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> <?= __('Add') ?></a>
         </span>
-        <h3 class="panel-title"><i class="fa fa-list"></i> <?= __('List of <%= $singularHumanName %>'); ?></h3>
+        <h3 class="panel-title"><i class="fa fa-list"></i> <?= __('<%= $pluralHumanName %>'); ?></h3>
     </div>
     <div class="panel-body">
         <table id="<%= $singularVar %>-table" class="table table-striped table-hover dataTable">
