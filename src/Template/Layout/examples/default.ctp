@@ -8,17 +8,17 @@
         <!-- Styles -->
         <?= $this->Element('Builder.constructor/default-layout-css') ?>
         <?= $this->Html->css('builder/base') ?>
-        <?= $this->Html->css('builder/default') ?>        
+        <?= $this->Html->css('builder/default') ?>
+        <?= $this->fetch('css') ?>
         <!-- Scripts -->
         <?= $this->Element('Builder.constructor/default-layout-js') ?>
         <?= $this->Html->script('builder/base') ?>
         <?= $this->Html->script('builder/default') ?>
+        <?= $this->fetch('js') ?>
     </head>
     <body>
         <!-- Layout Navbar -->
-        <?php if (file_exists(APP . 'Template' . DS . 'Element' . DS . 'navbar.ctp')) : ?>
-            <?= $this->element('navbar') ?>
-        <?php endif; ?>
+        <?= $this->fetch('navbar') ?>
         <!-- Page Content -->
         <div class="container clearfix">
             <h1 class="page-header"><?= __($this->fetch('title')) ?></h1>
