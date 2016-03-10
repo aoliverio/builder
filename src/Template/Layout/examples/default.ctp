@@ -24,7 +24,7 @@
         <!-- Content Page -->
         <div class="container clearfix">
             <header class="content-header">
-                <h1 class="page-header"><?= __(h($this->fetch('title'))) ?></h1>
+                <h1 class="page-header"><?= __($this->fetch('title')) ?></h1>
             </header>
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
