@@ -7,19 +7,19 @@
         <?= $this->Html->meta('icon') ?>
         <!-- Styles -->
         <?= $this->Element('Builder.constructor/default-layout-css') ?>
+        <?= $this->fetch('css') ?>
         <?= $this->Html->css('builder/base') ?>
         <?= $this->Html->css('builder/default') ?>
-        <?= $this->fetch('css') ?>
         <!-- Scripts -->
         <?= $this->Element('Builder.constructor/default-layout-js') ?>
+        <?= $this->fetch('js') ?>        
         <?= $this->Html->script('builder/base') ?>
         <?= $this->Html->script('builder/default') ?>
-        <?= $this->fetch('js') ?>
     </head>
     <body>
-        <!-- Navbar Block -->
-        <nav class="navbar">
-            <?= $this->fetch('navbar') ?>
+        <!-- Nav Block -->
+        <nav class="nav">
+            <?= $this->fetch('nav') ?>
         </nav>
         <!-- Content Page -->
         <div class="container clearfix">
