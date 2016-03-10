@@ -17,13 +17,21 @@
         <?= $this->fetch('js') ?>
     </head>
     <body>
-        <!-- Layout Navbar -->
-        <?= $this->fetch('navbar') ?>
-        <!-- Page Content -->
+        <!-- Navbar Block -->
+        <nav class="navbar">
+            <?= $this->fetch('navbar') ?>
+        </nav>
+        <!-- Content Page -->
         <div class="container clearfix">
-            <h1 class="page-header"><?= __($this->fetch('title')) ?></h1>
+            <header class="content-header">
+                <h1 class="page-header"><?= __(h($this->fetch('title'))) ?></h1>
+            </header>
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
         </div>
+        <!-- Footer Block -->
+        <footer class="footer">
+            <?= $this->fetch('footer') ?>
+        </footer>
     </body>
 </html>
