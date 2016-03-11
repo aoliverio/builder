@@ -1,3 +1,24 @@
+<?php
+/**
+ * Laod base styles and scripts using Builder.constructor elements
+ */
+$this->element('Builder.constructor/base-styles');
+$this->element('Builder.constructor/base-scripts');
+
+/**
+ * Append layout custom style files
+ */
+$this->append('css');
+echo $this->Html->css(['builder/base', 'builder/dashboard']);
+$this->end;
+
+/**
+ * Append layout custom script files
+ */
+$this->append('script');
+echo $this->Html->script(['builder/base', 'builder/dashboard']);
+$this->end;
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,7 +28,6 @@
         <?= $this->Html->meta('icon') ?>
         <!-- Styles -->
         <?= $this->fetch('css') ?>
-        <?= $this->Html->css('builder/default') ?>
     </head>
     <body>
         <!-- Nav Block -->
@@ -28,6 +48,5 @@
         </footer>
         <!-- Scripts -->
         <?= $this->fetch('script') ?>        
-        <?= $this->Html->script('builder/default') ?>
     </body>
 </html>

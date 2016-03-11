@@ -1,3 +1,24 @@
+<?php
+/**
+ * Laod base styles and scripts using Builder.constructor elements
+ */
+$this->element('Builder.constructor/base-styles');
+$this->element('Builder.constructor/base-scripts');
+
+/**
+ * Append layout custom style files
+ */
+$this->append('css');
+echo $this->Html->css(['builder/base', 'builder/signin']);
+$this->end;
+
+/**
+ * Append layout custom script files
+ */
+$this->append('script');
+echo $this->Html->script(['builder/base', 'builder/signin']);
+$this->end;
+?>
 <html>
     <head>
         <?= $this->Html->charset() ?>
@@ -6,7 +27,6 @@
         <?= $this->Html->meta('icon') ?>
         <!-- Styles -->
         <?= $this->fetch('css') ?>
-        <?= $this->Html->css('builder/signin') ?>
     </head>
     <body>
         <div class="container clearfix">
@@ -15,6 +35,5 @@
         </div>
         <!-- Scripts -->
         <?= $this->fetch('script') ?>             
-        <?= $this->Html->script('builder/signin') ?>
     </body>
 </html>
