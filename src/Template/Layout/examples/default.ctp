@@ -10,14 +10,14 @@ $this->element('Builder.constructor/base-scripts');
  */
 $this->append('css');
 echo $this->Html->css(['builder/base', 'builder/default']);
-$this->end;
+$this->end();
 
 /**
  * Append layout custom script files
  */
 $this->append('script');
 echo $this->Html->script(['builder/base', 'builder/default']);
-$this->end;
+$this->end();
 ?>
 <!DOCTYPE html>
 <html>
