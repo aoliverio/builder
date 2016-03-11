@@ -30,18 +30,18 @@ $fields = collection($fields)->filter(function($field) use ($schema) {
 <% if (isset($keyFields[$field])) { %>
 <% $fieldData = $schema->column($field); %>
 <% if (!empty($fieldData['null'])) { %>
-    <?= $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'label' => '<%= Inflector::humanize($field) %>', 'empty' => true]); ?>
+    <?= $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'empty' => true]); ?>
 <% } else { %>
-    <?= $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'label' => '<%= Inflector::humanize($field) %>']); ?>
+    <?= $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>]); ?>
 <% } %>
 <% continue; %>
 <% } %>
 <% if (!in_array($field, ['created', 'modified', 'created_user', 'modified_user'])) { %>
 <% $fieldData = $schema->column($field); %>
 <% if (($fieldData['type'] === 'date') && (!empty($fieldData['null']))) { %>
-    <?= $this->Form->input('<%= $field %>', ['label' => '<%= Inflector::humanize($field) %>', 'empty' => true, 'default' => '']); ?>
+    <?= $this->Form->input('<%= $field %>', ['empty' => true, 'default' => '']); ?>
         <% } else { %>
-    <?= $this->Form->input('<%= $field %>', ['label' => '<%= Inflector::humanize($field) %>']); ?>
+    <?= $this->Form->input('<%= $field %>'); ?>
 <% } %>
 <% } %>
 <% endforeach; %>
