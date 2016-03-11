@@ -6,15 +6,8 @@
         <title><?= __($this->fetch('title')) ?></title>
         <?= $this->Html->meta('icon') ?>
         <!-- Styles -->
-        <?= $this->Element('Builder.constructor/default-layout-css') ?>
         <?= $this->fetch('css') ?>
-        <?= $this->Html->css('builder/base') ?>
         <?= $this->Html->css('builder/default') ?>
-        <!-- Scripts -->
-        <?= $this->Element('Builder.constructor/default-layout-js') ?>
-        <?= $this->fetch('js') ?>        
-        <?= $this->Html->script('builder/base') ?>
-        <?= $this->Html->script('builder/default') ?>
     </head>
     <body>
         <!-- Nav Block -->
@@ -33,5 +26,8 @@
         <footer class="footer">
             <?= $this->fetch('footer') ?>
         </footer>
+        <!-- Scripts -->
+        <?= $this->fetch('script') ?>        
+        <?= $this->Html->script('builder/default') ?>
     </body>
 </html>
