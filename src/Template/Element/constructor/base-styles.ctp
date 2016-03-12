@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Loader base styles using CDN resources
+ * Loader base styles using bower_components
  */
 $this->start('css');
 echo $this->Html->css([
-    'https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css',
-    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css',
-    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css',
-    'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
-    '//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css'
+    'bower_components/jquery_ui/themes/smoothness/jquery-ui.min.css',
+    'bower_components/bootstrap/dist/css/bootstrap.min.css',
+    'bower_components/fontawesome/css/font-awesome.min.css',
+    'bower_components/datatables/media/css/dataTables.bootstrap.min.css',
+    'bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
 ]);
 $this->end();
