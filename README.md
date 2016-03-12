@@ -11,6 +11,18 @@ Some of the highlights:
 - Used element to import in CakePHP 3 app default code and behavior.
 - Used DataTables JQuery plugin for table in the index template.
 
+## Minimal Requirements
+
+The Builder plugin using this third-party libraries, managed with bower:
+
+- jQuery
+- jQuery UI
+- Bootstrap
+- FontAwesome
+- Bootstrap Datepicker (Eonasdan repository to create datepicker on Bootstrap, http://eonasdan.github.io/bootstrap-datetimepicker/ )
+- DataTables ()
+- Summernote (Simple WYSIWYG editor on Bootstrap, http://summernote.org/)
+
 ## Installation
 
 You can install this plugin into your CakePHP application using [composer](http://getcomposer.org).
