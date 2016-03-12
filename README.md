@@ -19,9 +19,9 @@ The Builder plugin using this third-party libraries, managed with bower:
 - jQuery UI
 - Bootstrap
 - FontAwesome
-- Bootstrap Datepicker (Eonasdan repository to create datepicker on Bootstrap, http://eonasdan.github.io/bootstrap-datetimepicker/ )
-- DataTables (Add advanced interaction controls to any HTML table ,datatables.net)
-- Summernote (Simple WYSIWYG editor on Bootstrap, http://summernote.org/)
+- Bootstrap Datepicker (Eonasdan repository to create datepicker on Bootstrap, http://eonasdan.github.io/bootstrap-datetimepicker)
+- DataTables (Add advanced interaction controls to any HTML table, http://datatables.net)
+- Summernote (Simple WYSIWYG editor on Bootstrap, http://summernote.org)
 
 ## Installation
 
