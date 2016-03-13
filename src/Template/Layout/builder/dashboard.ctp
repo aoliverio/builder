@@ -1,11 +1,5 @@
 <?php
 /**
- * Laod base styles and scripts using Builder.constructor elements
- */
-$this->element('Builder.constructor/base-styles');
-$this->element('Builder.constructor/base-scripts');
-
-/**
  * Append layout custom style files
  */
 $this->append('css');
