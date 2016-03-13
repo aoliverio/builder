@@ -9,11 +9,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?= $this->Url->build('/'); ?>">Home</a>
+            <a class="navbar-brand" href="<?= $this->Url->build('/'); ?>"><i class="fa fa-home"></i> Home</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?= $this->Url->build('/users/logout'); ?>"><?= __('Logout') ?></a></li>
+                <li><a href="<?= $this->Url->build('/users/logout'); ?>"><i class="fa fa-sign-out"></i> <?= __('Logout') ?></a></li>
             </ul>
         </div>
     </div>
