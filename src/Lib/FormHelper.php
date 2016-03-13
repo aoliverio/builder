@@ -5,7 +5,7 @@ namespace Builder\Lib;
 /**
  * 
  */
-class Helper {
+class FormHelper {
 
     /**
      * 
