@@ -66,7 +66,6 @@ class View extends BaseView {
             '/bower_components/bootstrap/dist/js/bootstrap.min.js',
             '/bower_components/datatables/media/js/jquery.dataTables.min.js',
             '/bower_components/datatables/media/js/dataTables.bootstrap.js',
-            '/bower_components/moment/min/moment.min.js',
             '/bower_components/summernote/dist/summernote.min.js'
         ]);
         $this->end();
