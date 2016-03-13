@@ -35,13 +35,41 @@ class View extends BaseView {
             'textarea' => '<textarea class="form-control" name="{{name}}"{{attrs}}>{{value}}</textarea>',
             'select' => '<select class="form-control" name="{{name}}"{{attrs}}>{{content}}</select>',
             'selectMultiple' => '<select class="form-control" name="{{name}}[]" multiple="multiple"{{attrs}}>{{content}}</select>',
-        
         ];
-        
+
         /**
          * 
          */
         $this->Form->templates($_templates);
+
+
+        /**
+         * Loader base styles using bower_components
+         */
+        $this->start('css');
+        echo $this->Html->css([
+            '/bower_components/jquery_ui/themes/smoothness/jquery-ui.min.css',
+            '/bower_components/bootstrap/dist/css/bootstrap.min.css',
+            '/bower_components/fontawesome/css/font-awesome.min.css',
+            '/bower_components/datatables/media/css/dataTables.bootstrap.min.css',
+            '/bower_components/summernote/dist/summernote.css'
+        ]);
+        $this->end();
+
+        /**
+         * Laoder base scripts using bower_components
+         */
+        $this->start('script');
+        echo $this->Html->script([
+            '/bower_components/jquery/dist/jquery.min.js',
+            '/bower_components/jquery-ui/jquery-ui.min.js',
+            '/bower_components/bootstrap/dist/js/bootstrap.min.js',
+            '/bower_components/datatables/media/js/jquery.dataTables.min.js',
+            '/bower_components/datatables/media/js/dataTables.bootstrap.js',
+            '/bower_components/moment/min/moment.min.js',
+            '/bower_components/summernote/dist/summernote.min.js'
+        ]);
+        $this->end();
     }
 
 }
