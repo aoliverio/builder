@@ -16,6 +16,12 @@ class View extends BaseView {
         parent::initialize();
 
         /**
+         * Set default layout for App using Layout/builder
+         */
+        if ($this->layout === 'default')
+            $this->layout('builder/default');
+
+        /**
          *  Set form templates
          */
         $_templates = [
@@ -69,6 +75,22 @@ class View extends BaseView {
             '/bower_components/summernote/dist/summernote.min.js'
         ]);
         $this->end();
+
+        /**
+         * Load myTabs form Builder/Element/constructor
+         */
+        $this->append('script', $this->element('Builder.constructor/default-tabs'));
+
+        /**
+         * Load myModal form Builder/Element/constructor
+         */
+        $this->append('script', $this->element('Builder.constructor/default-modal'));
+
+        /**
+         * If empty 'nav' block, set default navbar using Builder/Element/builder
+         */
+        if (!$this->fetch('nav'))
+            $this->assign('nav', $this->element('Builder.builder/navbar-fixed-top'));
     }
 
 }
