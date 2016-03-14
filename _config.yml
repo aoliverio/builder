@@ -10,6 +10,13 @@ twitter_username: aoliverio
 github_username:  aoliverio
 facebook_username:  antonio.oliverio
 email_username:
+    
+#
+pages:
+    page:
+        title: News
+        url: news
+    
 
 # Build settings
 markdown: kramdown
