@@ -1,0 +1,31 @@
+{
+    "name": "aoliverio/builder",
+    "description": "CakePHP 3.x plugin to generate beautiful and functional masks in Bootstrap 3 style",
+    "type": "cakephp-plugin",
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"Antonio Oliverio",
+            "role":"Author",
+            "homepage":"http://www.aoliverio.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.16",
+        "cakephp/cakephp": "~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Builder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Builder\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}
