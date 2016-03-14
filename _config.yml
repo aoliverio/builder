@@ -5,11 +5,11 @@ email: antonio.oliverio@gmail.com
 copyright_name: aoliverio.com
 description: "CakePHP 3.x plugin to generate beautiful & functional crud GUI in Bootstrap 3 style!"
 baseurl: "/builder"
-url: "http://yourdomain.com"
+url: "https://aoliverio.github.io"
 twitter_username: aoliverio
 github_username:  aoliverio
 facebook_username:  antonio.oliverio
-email_username:  your-email@yourdomain.com
+email_username:
 
 # Build settings
 markdown: kramdown
