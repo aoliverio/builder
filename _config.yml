@@ -8,12 +8,12 @@ highlighter: rouge
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : simple site
+title : Builder site
 author :
-  name : Karl Broman
-  email : kbroman@gmail.com
-  github : kbroman
-  twitter : kwbroman
+  name : Antonio Oliverio
+  email : antonio.oliverio@gmail.com
+  github : aoliverio
+  twitter : aoliverio
   feedburner : nil
 
 production_url : https://aoliverio.github.io/builder
