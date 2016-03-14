@@ -1,14 +1,14 @@
 # Site settings
-title: Clean Blog
+title: Builder for CakePHP
 header-img: img/home-bg.jpg
-email: your-email@yourdomain.com
-copyright_name: Your/Project/Corporate Name
-description: "Write your site description here. It will be used as your sites meta description as well!"
-baseurl: "/startbootstrap-clean-blog-jekyll"
+email: antonio.oliverio@gmail.com
+copyright_name: aoliverio.com
+description: "CakePHP 3.x plugin to generate beautiful & functional crud GUI in Bootstrap 3 style!"
+baseurl: "/builder"
 url: "http://yourdomain.com"
-twitter_username: SBootstrap
-github_username:  davidtmiller
-facebook_username:  IronSummitMedia
+twitter_username: aoliverio
+github_username:  aoliverio
+facebook_username:  antonio.oliverio
 email_username:  your-email@yourdomain.com
 
 # Build settings
