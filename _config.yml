@@ -12,10 +12,7 @@ facebook_username:  antonio.oliverio
 email_username:
     
 #
-pages:
-    page:
-        title: News
-        url: news
+
     
 
 # Build settings
