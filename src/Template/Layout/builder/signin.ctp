@@ -23,8 +23,16 @@ $this->end();
         <?= $this->fetch('css') ?>
     </head>
     <body>
-        <div class="container clearfix">
-            <?= $this->Flash->render() ?>
+        <div class="container clearfix">            
+            <div class="form-signin">
+                <?= $this->Flash->render('auth') ?>
+                <?= $this->Form->create() ?>
+                <h2 class="form-signin-heading"><?= __('Please sign in') ?></h2>
+                <?= $this->Form->input('email') ?>
+                <?= $this->Form->input('password') ?>
+                <?= $this->Form->button(__('Sign in'), ['class' => 'btn btn-primary btn-lg btn-block']); ?>
+                <?= $this->Form->end() ?>
+            </div>
             <?= $this->fetch('content') ?>
         </div>
         <!-- Scripts -->
