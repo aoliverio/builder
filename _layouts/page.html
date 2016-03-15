@@ -26,11 +26,16 @@ layout: default
         <div class="col-md-9">
             {{ content }}
         </div>
-        <div class="well text-center">
-            <h2><i class="fa fa-github"></i></h2>
-            <p><a href="" target="_blank">Code Repository</a></p>
-            <p><a href="" target="_blank">Issues</a></p>
-            <p><a href="" target="_blank">Requests</a></p>
+        <div class="col-md-3">
+            <div class="text-center">
+                <h3><i class="fa fa-github"></i> View on GitHub</h3>
+                <a href="{{ site.github.code_url }}" target="_blank">Code Repository</a>
+                <a href="{{ site.github.issues_url }}" target="_blank">Issues</a>
+                <a href="{{ site.github.pulls_url }}" target="_blank">Pull Requests</a>
+                <a href="{{ site.github.releases_url }}" target="_blank">Releases</a>
+                <!-- Get latest button-->
+                <p><a class="btn btn-get-latest" href="{{ page.download_url }}" target="_blank"><i class="fa fa-download"></i> {{ page.download_label }}</a></p>
+            </div>
         </div>
     </div>
 </div>
