@@ -6,10 +6,11 @@ copyright_name: Antonio Oliverio
 description: "CakePHP 3.x plugin to generate beautiful & functional crud GUI in Bootstrap 3 style!"
 baseurl: "/builder"
 url: "https://aoliverio.github.io"
+github_code_url: "https://github.com/aoliverio/builder"
 twitter_username: aoliverio
-github_username:  aoliverio
-facebook_username:  antonio.oliverio
-email_username:    
+github_username: aoliverio
+facebook_username: antonio.oliverio
+email_username:
 
 # Build settings
 markdown: kramdown
