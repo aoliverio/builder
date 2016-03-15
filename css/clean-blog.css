@@ -345,6 +345,14 @@ form .row:first-child .floating-label-form-group {
     border: 1px solid #0085a1;
     color: white;
 }
+.btn-get-latest{
+    text-decoration: none;
+    font-size: 16px;
+    padding: 25px 35px;
+    background-color: #0085a1;
+    border: 1px solid #0085a1;
+    color: white;
+}
 .pager {
     margin: 20px 0 0;
 }
