@@ -6,7 +6,7 @@ header-img: "img/about-bg.jpg"
 ---
 
 <!-- News & Releases -->
-<h1 class="page-header">News & Releases</h1>
+<h1>News & Releases</h1>
 
 {% for post in paginator.posts %}
 <div class="post-preview">
@@ -20,7 +20,7 @@ header-img: "img/about-bg.jpg"
     </a>
     <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
 </div>
-<hr>
+<hr/>
 {% endfor %}
 
 <!-- Pager -->

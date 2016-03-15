@@ -7,7 +7,8 @@ getlatest_label: "GET LATEST RELEASE"
 ---
 
 <!-- News & Releases -->
-<h1 class="page-header">News & Releases</h1>
+<h1>News & Releases</h1>
+<hr/>
 
 {% for post in paginator.posts %}
 <div class="post-preview">
@@ -19,7 +20,7 @@ getlatest_label: "GET LATEST RELEASE"
     </a>
     <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
 </div>
-<hr>
+<hr/>
 {% endfor %}
 
 <!-- Pager -->
