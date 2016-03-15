@@ -1,24 +1,49 @@
-#Clean Blog by Start Bootstrap - Jekyll Version
+# Builder for CakePHP 3.x
 
-The official Jekyll version of the Clean Blog theme by [Start Bootstrap](http://startbootstrap.com/).
+Builder is a CakePHP 3.x plugin used to generate code in Bootstrap 3 style. 
 
-###[View Live Demo &rarr;](http://blackrockdigital.github.io/startbootstrap-clean-blog-jekyll/)
+Some of the highlights:
 
-## Before You Begin
+- Defined a new Bake template for generate CRUD using Bootstrap 3 framework.
+- Added filter action to controller and generate base filter template.
+- Open add, edit, delete and filter templates in the Bootstrap 3 modal view.
+- Used grid and detail template to extend the index and view actions functionality.
+- Used element to import in CakePHP 3 app default code and behavior.
+- Used DataTables JQuery plugin for table in the index template.
 
-In the _config.yml file, the base URL is set to /startbootstrap-clean-blog-jekyll which is this themes gh-pages preview. It's recommended that you remove the base URL before working with this theme locally!
+## Minimal Requirements
 
-It should look like this:
-`baseurl: ""`
+The Builder plugin using this third-party libraries, managed with bower:
 
-## What's Included
+- jQuery
+- jQuery UI
+- Bootstrap
+- FontAwesome
+- DataTables (Add advanced interaction controls to any HTML table, http://datatables.net)
+- Summernote (Simple WYSIWYG editor on Bootstrap, http://summernote.org)
 
-A full Jekyll environment is included with this theme. If you have Jekyll installed, simply run `jekyll serve` in your command line and preview the build in your browser. You can use `jekyll serve --watch` to watch for changes in the source files as well.
+## Installation
 
-A Grunt environment is also included. There are a number of tasks it performs like minification of the JavaScript, compiling of the LESS files, adding banners to keep the Apache 2.0 license intact, and watching for changes. Run the grunt default task by entering `grunt` into your command line which will build the files. You can use `grunt watch` if you are working on the JavaScript or the LESS.
+You can install this plugin into your CakePHP application using [composer](http://getcomposer.org).
 
-You can run `jekyll serve --watch` and `grunt watch` at the same time to watch for changes and then build them all at once.
+The recommended way to install composer packages is:
+```
+composer require aoliverio/builder
+```
 
-## Support
+Load plugin in your application:
+```
+bin/cake plugin load Builder
+```
 
-Visit Clean Blog's template overview page on Start Bootstrap at http://startbootstrap.com/template-overviews/clean-blog/ and leave a comment, email feedback@startbootstrap.com, or open an issue here on GitHub for support.
+## Docs
+
+For more informations about installation and configuration options, see the [wiki section](https://github.com/aoliverio/builder/wiki).
+
+## Bugs & Feedback
+
+[https://github.com/aoliverio/builder/issues](https://github.com/aoliverio/builder/issues).
+
+## License
+
+Copyright (c) 2015 Antonio Oliverio and licensed under [MIT License](http://opensource.org/licenses/mit-license.php).
