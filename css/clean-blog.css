@@ -174,7 +174,7 @@ hr.small {
     font-weight: 300;
     margin: 10px 0 0;
 }
-.subheading-download a:link {
+.subheading .get-latest a {
     color: white;
 }
 @media only screen and (min-width: 768px) {
