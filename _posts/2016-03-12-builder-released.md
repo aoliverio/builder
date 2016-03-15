@@ -1,16 +1,16 @@
 ---
 layout:     post
-title:      "Dinosaurs are extinct today"
-subtitle:   "because they lacked opposable thumbs and the brainpower to build a space program."
-date:       2016-03-12 12:00:00
-author:     "Start Bootstrap"
+title:      "Builder 1.0.4 released"
+subtitle:   "A new version of Builder plugin was released."
+date:       2016-03-13 12:00:00
+author:     "aoliverio"
 header-img: "img/post-bg-01.jpg"
 ---
 
-# Released
+# Builder 1.0.4 released
 
-test list
+A new version of Builder was released. This version includes significant improvements such as:
 
-- one
-- two 
-- three
+- They were defined 'default' layout and 'signin' in style Bootstrap 3, ready to use in the application.
+- Were integrated scripts and styles using bower.
+- Other small structural improvements.
