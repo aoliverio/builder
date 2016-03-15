@@ -13,7 +13,7 @@ email_username:
     
 # GetLatest
 getlatest_url: "https://github.com/aoliverio/builder/releases"
-getlatest_label: "Get Latest"
+getlatest_label: "GET LATEST RELEASE"
     
 # GitHub
 github:
