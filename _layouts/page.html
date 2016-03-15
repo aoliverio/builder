@@ -12,7 +12,7 @@ layout: default
                     <hr class="small">
                     <span class="subheading">{{ page.description }}</span>
                     {% if page.download_url %}
-                    <p><a class="btn btn-get-latest" href="{{ page.download_url }}" target="_blank"><i class="fa fa-download"></i> {{ page.download_label }}</a></p>
+                    <p><a class="btn btn-get-latest" href="{{ page.getlatest_url }}" target="_blank"><i class="fa fa-download"></i> {{ page.getlatest_label }}</a></p>
                     {% endif %}
                 </div>
             </div>
@@ -28,13 +28,15 @@ layout: default
         </div>
         <div class="col-md-3">
             <div class="text-center">
-                <h3><i class="fa fa-github"></i> View on GitHub</h3>
-                <a href="{{ site.github.code_url }}" target="_blank">Code Repository</a>
-                <a href="{{ site.github.issues_url }}" target="_blank">Issues</a>
-                <a href="{{ site.github.pulls_url }}" target="_blank">Pull Requests</a>
-                <a href="{{ site.github.releases_url }}" target="_blank">Releases</a>
+                <div class="thumbnails">
+                    <h3><i class="fa fa-github"></i> View on GitHub</h3>
+                    <a href="{{ site.github.code_url }}" target="_blank">Code Repository</a><br/>
+                    <a href="{{ site.github.issues_url }}" target="_blank">Issues</a><br/>
+                    <a href="{{ site.github.pulls_url }}" target="_blank">Pull Requests</a><br/>
+                    <a href="{{ site.github.releases_url }}" target="_blank">Releases</a><br/>
+                </div>
                 <!-- Get latest button-->
-                <p><a class="btn btn-get-latest" href="{{ page.download_url }}" target="_blank"><i class="fa fa-download"></i> {{ page.download_label }}</a></p>
+                <p><a class="btn btn-get-latest btn-block" href="{{ page.getlatest_url }}" target="_blank"><i class="fa fa-download"></i> {{ page.getlatest_label }}</a></p>
             </div>
         </div>
     </div>

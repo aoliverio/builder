@@ -11,6 +11,10 @@ github_username: aoliverio
 facebook_username: antonio.oliverio
 email_username:
     
+# GetLatest
+getlatest_url: "https://github.com/aoliverio/builder/releases"
+getlatest_label: "Get Latest"
+    
 # GitHub
 github:
     code_url: "https://github.com/aoliverio/builder"
