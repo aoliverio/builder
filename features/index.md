@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Features
-permalink: /features/home/
-redirect_from: /features/index.html
+permalink: /features/index
 author: "aoliverio"
 ---
 
