@@ -14,7 +14,7 @@ social:
     facebook: antonio.oliverio
     email_username:
     
-# GetLatest
+# GetLatest Release 
 getlatest_url: "https://github.com/aoliverio/builder/releases"
 getlatest_label: "GET LATEST"
     
@@ -33,4 +33,4 @@ paginate: 3
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 # Gems
-gems: [jekyll-paginate, jekyll-feed]
+gems: [jekyll-paginate, jekyll-feed, jekyll-redirect-from]
