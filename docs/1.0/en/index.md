@@ -2,7 +2,7 @@
 layout: page
 title: Docs
 permalink: /docs/1.0/en/home
-redirect_from: /docs/1.0
+redirect_from: /docs/1.0/index.html
 author: "aoliverio"
 ---
 
