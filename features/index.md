@@ -1,7 +1,9 @@
 ---
-layout:     page
-title:      "Features"
-author:     "aoliverio
+layout: page
+title: Features
+permalink: /features/home/
+redirect_from: /features/index.html
+author: "aoliverio"
 ---
 
-# Builder 1.0.0 released
+# Features
