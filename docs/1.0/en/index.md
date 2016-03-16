@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Docs
-permalink: /docs/1.0/en/index
-redirect_from: /docs
+permalink: /docs/1.0/en/home
+redirect_from: /docs/1.0
 author: "aoliverio"
 ---
 
