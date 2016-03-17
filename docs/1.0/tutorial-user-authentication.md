@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Docs
-permalink: /en/docs/1.0/tutorial-user-authentication.html
+permalink: /docs/1.0/tutorial-user-authentication.html
 author: "aoliverio"
 ---
 
