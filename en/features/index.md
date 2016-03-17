@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Features
-permalink: /features/index
+permalink: features/index
 
 author: "aoliverio"
 ---
