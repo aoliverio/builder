@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Docs
-permalink: /docs/index.it
+permalink: /docs/index.html
 author: "aoliverio"
 ---
 
