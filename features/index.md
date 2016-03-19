@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Features
-description: web development is simple with Builder
+description: The web development process is simple with Builder.
 permalink: features/index
 
 author: "aoliverio"
