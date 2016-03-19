@@ -8,4 +8,16 @@ author: "aoliverio"
 
 # Builder Extensions
 
-This section is under construction...
+> In this section are published the main plugin compatible with the Builder
+
+## Content
+
+Content implements the back end of a Content Management System
+
+This plugin is under construction...
+
+## Site
+
+Site implements the front end of a Content Management System
+
+This plugin is under construction...
