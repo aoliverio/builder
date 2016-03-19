@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Extensions
-description: plugin compatible with the Builder
+description: plugins compatible with the Builder
 permalink: extensions/index
 
 author: "aoliverio"
