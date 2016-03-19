@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Docs
-description: the Builder documentation
+description: The Builder documentation.
 permalink: /docs/index.html
 author: "aoliverio"
 ---
