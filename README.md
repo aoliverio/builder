@@ -38,7 +38,7 @@ bin/cake plugin load Builder
 
 ## Docs
 
-For more informations about installation and configuration options, see the [wiki section](https://github.com/aoliverio/builder/wiki).
+For more informations about installation and configuration options, see the [WIKI](https://github.com/aoliverio/builder/wiki).
 
 ## Bugs & Feedback
 
