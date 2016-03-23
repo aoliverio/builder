@@ -25,7 +25,7 @@ $this->end();
     <body>
         <div class="container clearfix">            
             <div class="form-signin">
-                <?= $this->Flash->render('auth') ?>
+                <?= $this->Flash->render() ?>
                 <?= $this->Form->create() ?>
                 <h2 class="form-signin-heading"><?= __('Please sign in') ?></h2>
                 <?= $this->Form->input('email') ?>
