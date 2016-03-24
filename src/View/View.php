@@ -48,43 +48,39 @@ class View extends BaseView {
          */
         $this->Form->templates($_templates);
 
-
         /**
-         * Loader base styles using bower_components
+         * Loader base styles using bower_components and default Builder settings
          */
-        $this->start('css');
+        $this->start('builder-base-css');
         echo $this->Html->css([
             '/bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css',
             '/bower_components/bootstrap/dist/css/bootstrap.min.css',
             '/bower_components/fontawesome/css/font-awesome.min.css',
             '/bower_components/datatables/media/css/dataTables.bootstrap.min.css',
-            '/bower_components/summernote/dist/summernote.css'
+            '/bower_components/summernote/dist/summernote.css',
+            '/css/builder/base.css'
         ]);
         $this->end();
 
         /**
-         * Laoder base scripts using bower_components
+         * Laoder base scripts using bower_components and default Builder settings
          */
-        $this->start('script');
+        $this->start('builder-base-script');
         echo $this->Html->script([
             '/bower_components/jquery/dist/jquery.min.js',
             '/bower_components/jquery-ui/jquery-ui.min.js',
             '/bower_components/bootstrap/dist/js/bootstrap.min.js',
             '/bower_components/datatables/media/js/jquery.dataTables.min.js',
             '/bower_components/datatables/media/js/dataTables.bootstrap.js',
-            '/bower_components/summernote/dist/summernote.min.js'
+            '/bower_components/summernote/dist/summernote.min.js',
+            '/js/builder/base.js'
         ]);
         $this->end();
 
         /**
-         * Load myTabs form Builder/Element/constructor
+         * Load default footer html element form Builder/Element/constructor
          */
-        $this->append('script', $this->element('Builder.constructor/default-tabs'));
-
-        /**
-         * Load myModal form Builder/Element/constructor
-         */
-        $this->append('script', $this->element('Builder.constructor/default-modal'));
+        $this->append('builder-footer', $this->element('Builder.constructor/default-builder-footer'));
 
         /**
          * If empty 'nav' block, set default navbar using Builder/Element/builder
