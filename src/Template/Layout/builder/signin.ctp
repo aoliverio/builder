@@ -1,25 +1,12 @@
-<?php
-/**
- * Append layout custom style files
- */
-$this->append('css');
-echo $this->Html->css(['builder/base', 'builder/signin']);
-$this->end();
-
-/**
- * Append layout custom script files
- */
-$this->append('script');
-echo $this->Html->script(['builder/base', 'builder/signin']);
-$this->end();
-?>
 <html>
     <head>
         <?= $this->Html->charset() ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?= $this->fetch('title') ?></title>
         <?= $this->Html->meta('icon') ?>
-        <!-- Styles -->
+        <!-- Builder and app styles -->
+        <?= $this->fetch('builder-css') ?>
+        <?= $this->Html->css('builder/signin') ?>
         <?= $this->fetch('css') ?>
     </head>
     <body>
@@ -35,7 +22,11 @@ $this->end();
             </div>
             <?= $this->fetch('content') ?>
         </div>
-        <!-- Scripts -->
-        <?= $this->fetch('script') ?>             
+        <!-- Builder default element -->
+        <?= $this->fetch('builder-element') ?>
+        <!-- Builder and app scripts -->
+        <?= $this->fetch('builder-script') ?>
+        <?= $this->Html->script('builder/signin') ?>
+        <?= $this->fetch('script') ?>
     </body>
 </html>
