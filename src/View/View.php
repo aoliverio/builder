@@ -51,7 +51,7 @@ class View extends BaseView {
         /**
          * Loader base styles using bower_components and default Builder settings
          */
-        $this->start('builder-base-css');
+        $this->start('builder-css');
         echo $this->Html->css([
             '/bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css',
             '/bower_components/bootstrap/dist/css/bootstrap.min.css',
@@ -65,7 +65,7 @@ class View extends BaseView {
         /**
          * Laoder base scripts using bower_components and default Builder settings
          */
-        $this->start('builder-base-script');
+        $this->start('builder-script');
         echo $this->Html->script([
             '/bower_components/jquery/dist/jquery.min.js',
             '/bower_components/jquery-ui/jquery-ui.min.js',
@@ -78,9 +78,9 @@ class View extends BaseView {
         $this->end();
 
         /**
-         * Load default footer html element form Builder/Element/constructor
+         * Load Builder default constructor element form Builder/Element/constructor
          */
-        $this->append('builder-footer', $this->element('Builder.constructor/default-builder-footer'));
+        $this->prepend('builder-element', $this->element('Builder.constructor/default'));
 
         /**
          * If empty 'nav' block, set default navbar using Builder/Element/builder
