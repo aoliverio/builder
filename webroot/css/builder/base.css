@@ -18,21 +18,6 @@ html {
     padding: 6px 12px;
 }
 
-/* Custom page CSS */
-.container .text-muted {
-    margin: 20px 0;
-}
-
-label {
-    margin-top: 10px;
-}
-
-.page-header{
-    border-bottom: 1px solid #eee;
-    margin: 10px 0;
-    padding-bottom: 10px;
-}
-
 /* Sortable element */
 .sortable { list-style-type: none; margin: 0; padding: 0;}
 .sortable li { margin: 0 3px 3px 3px;}

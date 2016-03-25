@@ -1,4 +1,9 @@
-/* Bootstrap 3 page-header */
-.page-header{
+/* Define style for builder/default template */
+.container .text-muted {
     margin: 20px 0;
+}
+.page-header{
+    border-bottom: 1px solid #eee;
+    margin: 10px 0;
+    padding-bottom: 10px;
 }
