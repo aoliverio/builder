@@ -1,18 +1,3 @@
-<?php
-/**
- * Append layout custom style files
- */
-$this->append('css');
-echo $this->Html->css(['builder/base', 'builder/default']);
-$this->end();
-
-/**
- * Append layout custom script files
- */
-$this->append('script');
-echo $this->Html->script(['builder/base', 'builder/default']);
-$this->end();
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +5,9 @@ $this->end();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?= __($this->fetch('title')) ?></title>
         <?= $this->Html->meta('icon') ?>
-        <!-- Styles -->
+        <!-- Builder and app styles -->
+        <?= $this->fetch('builder-css') ?>
+        <?= $this->Html->css('builder/default') ?>
         <?= $this->fetch('css') ?>
     </head>
     <body>
@@ -40,7 +27,11 @@ $this->end();
         <footer class="footer">
             <?= $this->fetch('footer') ?>
         </footer>
-        <!-- Scripts -->
-        <?= $this->fetch('script') ?>        
+        <!-- Builder base element -->
+        <?= $this->fetch('builder-element') ?>
+        <!-- Builder and app scripts -->
+        <?= $this->fetch('builder-script') ?>
+        <?= $this->Html->script('builder/default') ?>
+        <?= $this->fetch('script') ?>
     </body>
 </html>
