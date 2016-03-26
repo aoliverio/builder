@@ -14,6 +14,11 @@ class View extends BaseView {
      */
     public function initialize() {
         parent::initialize();
+        
+        /**
+         * Use Builder Helpers
+         */
+        $this->loadHelper('Flash', ['className' => 'Builder.Flash']);
 
         /**
          * Set default layout for App using Layout/builder
