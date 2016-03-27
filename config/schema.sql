@@ -37,7 +37,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tasks` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  `routes` VARCHAR(255) NULL,
+  `route` TEXT NOT NULL,
   `description` TEXT NULL,
   `created` TIMESTAMP NULL,
   `modified` DATETIME NULL,
