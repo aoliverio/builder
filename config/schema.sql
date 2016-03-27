@@ -49,18 +49,18 @@ ENGINE = InnoDB;
 -- Table `users_roles`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `users_roles` (
-  `users_id` INT NOT NULL,
-  `roles_id` INT NOT NULL,
-  PRIMARY KEY (`users_id`, `roles_id`),
-  INDEX `roles_key1_idx` (`roles_id` ASC),
-  INDEX `users_key_idx` (`users_id` ASC),
+  `user_id` INT NOT NULL,
+  `role_id` INT NOT NULL,
+  PRIMARY KEY (`user_id`, `role_id`),
+  INDEX `roles_key1_idx` (`role_id` ASC),
+  INDEX `users_key_idx` (`user_id` ASC),
   CONSTRAINT `users_key`
-    FOREIGN KEY (`users_id`)
+    FOREIGN KEY (`user_id`)
     REFERENCES `users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `roles_key1`
-    FOREIGN KEY (`roles_id`)
+    FOREIGN KEY (`role_id`)
     REFERENCES `roles` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -71,18 +71,18 @@ ENGINE = InnoDB;
 -- Table `roles_tasks`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `roles_tasks` (
-  `roles_id` INT NOT NULL,
-  `tasks_id` INT NOT NULL,
-  PRIMARY KEY (`roles_id`, `tasks_id`),
-  INDEX `tasks_key1_idx` (`tasks_id` ASC),
-  INDEX `roles_key2_idx` (`roles_id` ASC),
+  `role_id` INT NOT NULL,
+  `task_id` INT NOT NULL,
+  PRIMARY KEY (`role_id`, `task_id`),
+  INDEX `tasks_key1_idx` (`task_id` ASC),
+  INDEX `roles_key2_idx` (`role_id` ASC),
   CONSTRAINT `roles_key2`
-    FOREIGN KEY (`roles_id`)
+    FOREIGN KEY (`role_id`)
     REFERENCES `roles` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `tasks_key1`
-    FOREIGN KEY (`tasks_id`)
+    FOREIGN KEY (`task_id`)
     REFERENCES `tasks` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
