@@ -13,7 +13,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?= $this->Url->build('/users/logout'); ?>"><i class="fa fa-sign-out"></i> <?= __('Logout') ?></a></li>
+                <li><a href="<?= $this->Url->build('/builder/users/logout'); ?>"><i class="fa fa-sign-out"></i> <?= __('Logout') ?></a></li>
             </ul>
         </div>
     </div>
