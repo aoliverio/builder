@@ -12,6 +12,9 @@
                 <label class="subheader"><?= __('Name') ?></label>
                 <p><?= h($task->name) ?></p>
                 <hr/>
+                <label class="subheader"><?= __('Route') ?></label>
+                <p><?= h($task->route) ?></p>
+                <hr/>
             </div>
             <div class="col-md-2 columns numbers end">
                 <label class="subheader"><?= __('Id') ?></label>

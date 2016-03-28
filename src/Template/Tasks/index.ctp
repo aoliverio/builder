@@ -16,6 +16,7 @@
                     </th>
                     <th><?= __('Id') ?></th>
                     <th><?= __('Name') ?></th>
+                    <th><?= __('Route') ?></th>
                     <th><?= __('Created') ?></th>
                     <th><?= __('Modified') ?></th>
                     <th class="actions no-sorting"><?= __('Actions') ?></th>
@@ -27,6 +28,7 @@
                         <td class="check"><input id="" class="" type="checkbox" name="" value="" /></td>
                         <td><?= $this->Number->format($task->id) ?></td>
                         <td><?= h($task->name) ?></td>
+                        <td><?= h($task->route) ?></td>
                         <td><?= h($task->created) ?></td>
                         <td><?= h($task->modified) ?></td>
                         <td class="actions text-right">
