@@ -20,13 +20,25 @@ class Auth {
     public static function isAuthorized($user_id, Request $request) {
 
         /**
-         * Authorize logout action
+         * Authorize logout action for all authenticate user
          */
         if ($request->action === 'logout')
             return true;
 
         /**
-         * 
+         * Authorize login action for all authenticate user
+         */
+        if ($request->action === 'login')
+            return true;
+
+        /**
+         * Authorize display action for all authenticate user
+         */
+        if ($request->action === 'display')
+            return true;
+
+        /**
+         * Define $url_elements
          */
         $url_elements = explode('/', $request->url);
 
