@@ -10,6 +10,7 @@ Some of the highlights:
 - Used grid and detail template to extend the index and view actions functionality.
 - Used element to import in CakePHP 3 app default code and behavior.
 - Used DataTables JQuery plugin for table in the index template.
+- Integrated simple Role-Based Access Controll.
 
 ## Minimal Requirements
 
