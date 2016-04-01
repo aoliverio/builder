@@ -36,7 +36,7 @@ $fields = collection($fields)->filter(function($field) use ($schema) {
 <% } %>
 <% continue; %>
 <% } %>
-<% if (!in_array($field, ['created', 'modified', 'created_user', 'modified_user'])) { %>
+<% if (!in_array($field, ['created', 'modified', 'created_by', 'modified_by'])) { %>
 <% $fieldData = $schema->column($field); %>
 <% if (($fieldData['type'] === 'date') && (!empty($fieldData['null']))) { %>
     <?= $this->Form->input('<%= $field %>', ['empty' => true, 'default' => '']); ?>
