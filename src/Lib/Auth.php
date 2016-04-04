@@ -11,6 +11,36 @@ use Cake\ORM\TableRegistry;
 class Auth {
 
     /**
+     * Define $defaultSettings
+     *
+     * @var type 
+     */
+    public static function getDefaultSettings() {
+
+        return [
+            'authorize' => 'Controller',
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'password'
+                    ]
+                ]
+            ],
+            'loginAction' => [
+                'plugin' => 'builder',
+                'controller' => 'users',
+                'action' => 'login',
+            ],
+            'unauthorizedRedirect' => [
+                'plugin' => 'builder',
+                'controller' => 'pages',
+                'action' => '401-authorization-required',
+            ]
+        ];
+    }
+
+    /**
      * Builder isAuthorized()
      * 
      * @param type $user_id
