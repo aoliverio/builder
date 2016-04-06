@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `roles_tasks` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Populate shema with basic data
+-- Populate schema with basic data
 -- -----------------------------------------------------
 
 --
@@ -101,11 +101,11 @@ INSERT INTO `roles` (`id`, `name`, `description`, `created`, `modified`) VALUES
 
 
 --
--- Dump dei dati per la tabella `roles_tasks`
+-- Dump dei dati per la tabella `users`
 --
 
-INSERT INTO `roles_tasks` (`role_id`, `task_id`) VALUES
-(1, 1);
+INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `is_blocked`, `created`, `modified`) VALUES
+(1, 'Administrator', 'admin@admin.com', 'admin', '$2y$10$VwqZLVzKMiP09q5BVMK6LueyGanfPMTCPs1vSJkAO6bbPRIdjll7a', 0, '2016-03-27 17:13:06', '2016-03-27 18:52:12');
 
 --
 -- Dump dei dati per la tabella `tasks`
@@ -114,17 +114,18 @@ INSERT INTO `roles_tasks` (`role_id`, `task_id`) VALUES
 INSERT INTO `tasks` (`id`, `name`, `route`, `description`, `created`, `modified`) VALUES
 (1, 'All', '/', 'Access at application root', '2016-03-27 17:15:36', '2016-03-29 07:53:34');
 
---
--- Dump dei dati per la tabella `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `is_blocked`, `created`, `modified`) VALUES
-(1, 'Administrator', 'admin@admin.com', 'admin', '$2y$10$VwqZLVzKMiP09q5BVMK6LueyGanfPMTCPs1vSJkAO6bbPRIdjll7a', 0, '2016-03-27 17:13:06', '2016-03-27 18:52:12');
-
 
 --
 -- Dump dei dati per la tabella `users_roles`
 --
 
 INSERT INTO `users_roles` (`user_id`, `role_id`) VALUES
-(1, 1)
+(1, 1);
+
+
+--
+-- Dump dei dati per la tabella `roles_tasks`
+--
+
+INSERT INTO `roles_tasks` (`role_id`, `task_id`) VALUES
+(1, 1);
