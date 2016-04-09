@@ -4,6 +4,7 @@ site_description: RAD toolkit for building admin web applications in Bootstrap s
 site_author: Antonio Oliverio
 
 repo_url: https://github.com/aoliverio/content/
+theme: cerulean
 
 pages:
 - Home: index.md
