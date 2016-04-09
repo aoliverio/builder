@@ -1,3 +1,3 @@
-# Welcome to Content Docs
+# Welcome to Builder Docs
 
-Content Management System backend, is a Builder extension.
+RAD toolkit for building admin web applications in Bootstrap style.
