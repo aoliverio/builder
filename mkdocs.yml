@@ -1,0 +1,14 @@
+site_name: Builder Docs
+site_url: http://www.aoliverio.com
+site_description: RAD toolkit for building admin web applications in Bootstrap style.
+site_author: Antonio Oliverio
+
+repo_url: https://github.com/aoliverio/content/
+
+pages:
+- Home: index.md
+- Preface:
+    - Overview: overview.md
+- Getting started:
+    - Istallation: installation.md
+    - Configuration: configuration.md
