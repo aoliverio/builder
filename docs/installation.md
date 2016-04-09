@@ -74,7 +74,7 @@ class AppView extends View {
 You must create database, or adding tables on existing database, using SQL code defined into: 
 
 ```
-/vendor/aoliverio/builder/config/Schema/builder.sql
+/vendor/aoliverio/builder/config/schema/builder.sql
 ```
 
 If you are created a new database, just replace the values in the `Datasources.default` array in the 
