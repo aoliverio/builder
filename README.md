@@ -32,9 +32,9 @@ The recommended way to install composer packages is:
 composer require aoliverio/builder
 ```
 
-Load plugin in your application:
+Load plugin with route params in your application:
 ```
-bin/cake plugin load Builder
+bin/cake plugin load -r Builder
 ```
 
 ## Docs
