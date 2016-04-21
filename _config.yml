@@ -5,7 +5,7 @@ email: antonio.oliverio@gmail.com
 copyright_name: Antonio Oliverio
 description: "CakePHP 3.x plugin to generate beautiful & functional crud GUI in Bootstrap 3 style!"
 baseurl: "/builder"
-url: "https://aoliverio.github.io"
+url: "http://getbuilder.org"
 
 # Social
 social:
