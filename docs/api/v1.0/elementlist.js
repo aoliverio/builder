@@ -1,3 +1,0 @@
-
-var ApiGen = ApiGen || {};
-ApiGen.elements = [["c","Builder\\Controller\\AppController"],["c","Builder\\Controller\\PagesController"],["c","Builder\\Controller\\RolesController"],["c","Builder\\Controller\\TasksController"],["c","Builder\\Controller\\UsersController"],["c","Builder\\Lib\\Auth"],["c","Builder\\Model\\Entity\\Role"],["c","Builder\\Model\\Entity\\Task"],["c","Builder\\Model\\Entity\\User"],["c","Builder\\Model\\Table\\RolesTable"],["c","Builder\\Model\\Table\\TasksTable"],["c","Builder\\Model\\Table\\UsersTable"],["c","Builder\\View\\Helper\\FlashHelper"],["c","Builder\\View\\View"]];
