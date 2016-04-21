@@ -3,7 +3,7 @@ title: Builder
 header-img: img/home-bg.jpg
 email: antonio.oliverio@gmail.com
 copyright_name: Antonio Oliverio
-description: "CakePHP 3.x plugin to generate beautiful & functional crud GUI in Bootstrap 3 style!"
+description: "RAD toolkit for building of admin web applications in CakePHP."
 baseurl: ""
 url: "http://getbuilder.org"
 
