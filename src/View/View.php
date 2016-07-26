@@ -92,6 +92,11 @@ class View extends BaseView {
          */
         if (!$this->fetch('nav'))
             $this->assign('nav', $this->element('Builder.builder/navbar-fixed-top'));
+            
+        /**
+         * Set default title for layout using controller name
+         */
+        $this->assign('title', Inflector::humanize(Inflector::tableize($this->request->controller)));
     }
 
 }
