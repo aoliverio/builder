@@ -3,6 +3,7 @@
 namespace Builder\View;
 
 use Cake\View\View as BaseView;
+use Cake\Utility\Inflector;
 
 /**
  * 
