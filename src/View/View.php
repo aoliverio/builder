@@ -25,7 +25,7 @@ class View extends BaseView {
          * Set default layout for App using Layout/default
          */
         if ($this->layout === 'default')
-            $this->layout('default/default');
+            $this->layout('default');
 
         /**
          *  Set form templates
@@ -59,11 +59,11 @@ class View extends BaseView {
          */
         $this->start('builder-css');
         echo $this->Html->css([
-            '/bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css',
-            '/bower_components/bootstrap/dist/css/bootstrap.min.css',
-            '/bower_components/fontawesome/css/font-awesome.min.css',
-            '/bower_components/datatables/media/css/dataTables.bootstrap.min.css',
-            '/bower_components/summernote/dist/summernote.css',
+            '/builder/bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css',
+            '/builder/bower_components/bootstrap/dist/css/bootstrap.min.css',
+            '/builder/bower_components/fontawesome/css/font-awesome.min.css',
+            '/builder/bower_components/datatables/media/css/dataTables.bootstrap.min.css',
+            '/builder/bower_components/summernote/dist/summernote.css',
             '/builder/css/base.css'
         ]);
         $this->end();
@@ -73,26 +73,26 @@ class View extends BaseView {
          */
         $this->start('builder-script');
         echo $this->Html->script([
-            '/bower_components/jquery/dist/jquery.min.js',
-            '/bower_components/jquery-ui/jquery-ui.min.js',
-            '/bower_components/bootstrap/dist/js/bootstrap.min.js',
-            '/bower_components/datatables/media/js/jquery.dataTables.min.js',
-            '/bower_components/datatables/media/js/dataTables.bootstrap.js',
-            '/bower_components/summernote/dist/summernote.min.js',
+            '/builder/bower_components/jquery/dist/jquery.min.js',
+            '/builder/bower_components/jquery-ui/jquery-ui.min.js',
+            '/builder/bower_components/bootstrap/dist/js/bootstrap.min.js',
+            '/builder/bower_components/datatables/media/js/jquery.dataTables.min.js',
+            '/builder/bower_components/datatables/media/js/dataTables.bootstrap.js',
+            '/builder/bower_components/summernote/dist/summernote.min.js',
             '/builder/js/base.js'
         ]);
         $this->end();
 
         /**
-         * Load Builder default constructor element form Builder/Element/constructor
+         * Load Builder default constructor element form Builder/Element/Constructor
          */
-        $this->prepend('builder-element', $this->element('Builder.constructor/default'));
+        $this->prepend('builder-element', $this->element('Builder.Constructor/default'));
 
         /**
-         * If empty 'nav' block, set default navbar using Builder/Element/default
+         * If empty 'nav' block, set default navbar using Builder/Element
          */
         if (!$this->fetch('nav'))
-            $this->assign('nav', $this->element('Builder.default/navbar-fixed-top'));
+            $this->assign('nav', $this->element('Builder.navbar-fixed-top'));
 
         /**
          * Set default title for layout using controller name

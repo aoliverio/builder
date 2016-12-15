@@ -7,7 +7,7 @@
         <?= $this->Html->meta('icon') ?>
         <!-- Builder and app styles -->
         <?= $this->fetch('builder-css') ?>
-        <?= $this->Html->css('Builder.default/default') ?>
+        <?= $this->Html->css('Builder.default') ?>
         <?= $this->fetch('css') ?>
     </head>
     <body>
@@ -31,7 +31,7 @@
         <?= $this->fetch('builder-element') ?>
         <!-- Builder and app scripts -->
         <?= $this->fetch('builder-script') ?>
-        <?= $this->Html->script('Builder.default/default') ?>
+        <?= $this->Html->script('Builder.default') ?>
         <?= $this->fetch('script') ?>
     </body>
 </html>

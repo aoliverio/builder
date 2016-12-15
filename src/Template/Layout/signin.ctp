@@ -6,7 +6,7 @@
         <?= $this->Html->meta('icon') ?>
         <!-- Builder and app styles -->
         <?= $this->fetch('builder-css') ?>
-        <?= $this->Html->css('builder/signin') ?>
+        <?= $this->Html->css('signin') ?>
         <?= $this->fetch('css') ?>
     </head>
     <body>
@@ -26,7 +26,7 @@
         <?= $this->fetch('builder-element') ?>
         <!-- Builder and app scripts -->
         <?= $this->fetch('builder-script') ?>
-        <?= $this->Html->script('builder/signin') ?>
+        <?= $this->Html->script('signin') ?>
         <?= $this->fetch('script') ?>
     </body>
 </html>
