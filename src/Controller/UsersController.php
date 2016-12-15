@@ -27,8 +27,8 @@ class UsersController extends AppController {
             $this->Flash->error(__('Your username or password is incorrect.'));
         }
 
-        // Set signin layout from Layout/builder
-        $this->viewBuilder()->layout('builder/signin');
+        // Set signin layout from Builder.Layout
+        $this->viewBuilder()->layout('signin');
         // Use the layout without Template 
         $this->render(false);
     }
