@@ -15,17 +15,17 @@ class View extends BaseView {
      */
     public function initialize() {
         parent::initialize();
-        
+
         /**
          * Use Builder Helpers
          */
         $this->loadHelper('Flash', ['className' => 'Builder.Flash']);
 
         /**
-         * Set default layout for App using Layout/builder
+         * Set default layout for App using Layout/default
          */
         if ($this->layout === 'default')
-            $this->layout('builder/default');
+            $this->layout('default/default');
 
         /**
          *  Set form templates
@@ -64,7 +64,7 @@ class View extends BaseView {
             '/bower_components/fontawesome/css/font-awesome.min.css',
             '/bower_components/datatables/media/css/dataTables.bootstrap.min.css',
             '/bower_components/summernote/dist/summernote.css',
-            '/css/builder/base.css'
+            '/builder/css/base.css'
         ]);
         $this->end();
 
@@ -79,7 +79,7 @@ class View extends BaseView {
             '/bower_components/datatables/media/js/jquery.dataTables.min.js',
             '/bower_components/datatables/media/js/dataTables.bootstrap.js',
             '/bower_components/summernote/dist/summernote.min.js',
-            '/js/builder/base.js'
+            '/builder/js/base.js'
         ]);
         $this->end();
 
@@ -89,11 +89,11 @@ class View extends BaseView {
         $this->prepend('builder-element', $this->element('Builder.constructor/default'));
 
         /**
-         * If empty 'nav' block, set default navbar using Builder/Element/builder
+         * If empty 'nav' block, set default navbar using Builder/Element/default
          */
         if (!$this->fetch('nav'))
-            $this->assign('nav', $this->element('Builder.builder/navbar-fixed-top'));
-            
+            $this->assign('nav', $this->element('Builder.default/navbar-fixed-top'));
+
         /**
          * Set default title for layout using controller name
          */
