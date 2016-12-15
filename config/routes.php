@@ -1,11 +1,18 @@
 <?php
+
 use Cake\Routing\Router;
 
+/**
+ * 
+ */
 Router::plugin('Builder', function ($routes) {
     $routes->fallbacks('InflectedRoute');
-    
-    /**
-     * 
-     */
-    $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+});
+
+/**
+ * Display home by default
+ */
+Router::scope('/', function ($routes) {
+    $routes->connect('/builder', ['plugin' => 'Builder', 'controller' => 'Pages', 'action' => 'view', 'home']);
+    $routes->connect('/Builder', ['plugin' => 'Builder', 'controller' => 'Pages', 'action' => 'view', 'home']);
 });

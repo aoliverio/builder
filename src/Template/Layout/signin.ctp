@@ -14,10 +14,10 @@
             <div class="form-signin">
                 <?= $this->Flash->render() ?>
                 <?= $this->Form->create() ?>
-                <h2 class="form-signin-heading"><?= __('Please sign in') ?></h2>
-                <?= $this->Form->input('email') ?>
-                <?= $this->Form->input('password') ?>
-                <?= $this->Form->button(__('Sign in'), ['class' => 'btn btn-primary btn-lg btn-block']); ?>
+                <h1 class="form-signin-heading text-center"><i class="fa fa-sign-in"></i> <?= __('Login Area') ?></h1>
+                <?= $this->Form->input('email', ['placeholder' => 'Please insert email...']) ?>
+                <?= $this->Form->input('password', ['placeholder' => 'Please insert password...']) ?>
+                <?= $this->Form->button(__('Sign In'), ['class' => 'btn btn-primary btn-lg btn-block']); ?>
                 <?= $this->Form->end() ?>
             </div>
             <?= $this->fetch('content') ?>

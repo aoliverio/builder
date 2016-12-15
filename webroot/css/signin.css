@@ -1,7 +1,18 @@
 body {
+    color: #3C333C;
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: #eee;
+    /** Backgroud image **/
+    background: url(../img/bg_login.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.h1, h1 {
+    font-size: 26px;
 }
 
 .form-signin {
