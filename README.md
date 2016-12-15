@@ -12,7 +12,8 @@ Some of the highlights:
 - Used DataTables JQuery plugin for table in the index template.
 - Integrated simple Role-Based Access Controll.
 
-Below are reported some screenshots:
+The last version (1.1.x series) was called "Monumental Valley", from the image that appears when you log in. Below are reported some screenshots:
+
 ![builder-form-template](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/form-template-screenshot.png)
 ![builder-login-area](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/login-area-screenshot.png)
 
