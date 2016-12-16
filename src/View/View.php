@@ -4,6 +4,7 @@ namespace Builder\View;
 
 use Cake\View\View as BaseView;
 use Cake\Utility\Inflector;
+use Cake\Core\Configure;
 
 /**
  * 
@@ -17,6 +18,18 @@ class View extends BaseView {
         parent::initialize();
 
         /**
+         * Set copyright from Builder configs
+         */
+        $copyright = (Configure::check('Builder.copyright')) ? Configure::read('Builder.copyright') : '[Builder.copyright]';
+        $this->assign('copyright', $copyright);
+
+        /**
+         * Set name from Builder configs
+         */
+        $name = (Configure::check('Builder.name')) ? Configure::read('Builder.name') : '[Builder.name]';
+        $this->assign('name', $name);
+
+        /**
          * Use Builder Helpers
          */
         $this->loadHelper('Flash', ['className' => 'Builder.Flash']);
@@ -25,7 +38,7 @@ class View extends BaseView {
          * Set default layout for App using Layout/default
          */
         if ($this->layout === 'default')
-            $this->layout('default');
+            $this->layout('Builder.default');
 
         /**
          *  Set form templates
@@ -93,6 +106,12 @@ class View extends BaseView {
          */
         if (!$this->fetch('nav'))
             $this->assign('nav', $this->element('Builder.navbar-fixed-top'));
+
+        /**
+         * If empty 'breadcrumb' block, set default breadcrumb using Builder/Element
+         */
+        if (!$this->fetch('breadcrumb'))
+            $this->assign('breadcrumb', $this->element('Builder.breadcrumb'));
 
         /**
          * Set default title for layout using controller name

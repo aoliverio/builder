@@ -63,8 +63,9 @@ $number_of_tasks = TableRegistry::get('Builder.Roles')->find()->count();
         <div class="alert alert-info">
             <h4 class="page-header"><i class="fa fa-wikipedia-w"></i> Wiki</h4>
             <ul>
-                <li><a href="https://github.com/aoliverio/builder/wiki/Features" target="_blank">Features</a></li>
-                <li><a href="https://github.com/aoliverio/builder/wiki/How-to-use" target="_blank">How to use Builder</a></li>
+                <li><a href="https://github.com/aoliverio/builder/wiki/features" target="_blank">Features</a></li>
+                <li><a href="https://github.com/aoliverio/builder/wiki/basic-settings" target="_blank">Basic Settings</a></li>
+                <li><a href="https://github.com/aoliverio/builder/wiki/how-to-use" target="_blank">How to use Builder</a></li>
             </ul>
         </div>
     </div>
