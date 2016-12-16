@@ -1,3 +1,12 @@
+<?php
+
+use Cake\Core\Configure;
+
+/**
+ * 
+ */
+$copyright = (Configure::check('Builder.copyright')) ? Configure::read('Builder.copyright') : '[Builder.copyright]';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,6 +26,11 @@
         </nav>
         <!-- Content Page -->
         <div class="container clearfix">
+            <ol class="breadcrumb">
+                <li><a href="<?= $this->Url->build('/') ?>">Home</a></li>
+                <li><a href="<?= $this->Url->build('/builder') ?>">Builder</a></li>
+                <li class="active">Data</li>
+            </ol>
             <header class="content-header">
                 <h1 class="page-header"><?= __($this->fetch('title')) ?></h1>
             </header>
@@ -25,7 +39,16 @@
         </div>
         <!-- Footer Block -->
         <footer class="footer">
-            <?= $this->fetch('footer') ?>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="text-muted"><?= $copyright ?></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-muted text-right">Created using <a href="">AOBuilder</a> in <a href="https://cakephp.org/" target="_blank">CakePHP</a></p>
+                    </div>
+                </div>
+            </div>
         </footer>
         <!-- Builder base element -->
         <?= $this->fetch('builder-element') ?>
