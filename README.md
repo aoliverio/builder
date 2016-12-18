@@ -12,10 +12,14 @@ Some of the highlights:
 - Used DataTables JQuery plugin for table in the index template.
 - Integrated simple Role-Based Access Controll.
 
-The last version (1.1.x series) was called "Monument Valley", from the image that appears when you log in. Below are reported some screenshots:
-
-![builder-form-template](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/form-template-screenshot.png)
+The last version was called "Monument Valley", from the image that appears at login. 
 ![builder-login-area](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/login-area-screenshot.png)
+
+This version uses popup element for ADD/EDIT/DELETE/FILTER actions:
+![builder-form-template](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/form-template-screenshot.png)
+
+In this version is a new dashboad Builder been integrated:
+![builder-form-template](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/builder-dashboard-screenshot.png)
 
 ## Minimal Requirements
 
@@ -46,25 +50,6 @@ Complete the installation using the Builder console:
 ```
 bin/cake builder setup
 ```
-
-## Screenshot
-
-The last version was called "Monument Valley", from the image that appears at login. 
-
-![builder-login-area](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/login-area-screenshot.png)
-
-***
-
-This version uses popup element for ADD/EDIT/DELETE/FILTER actions:
-
-![builder-form-template](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/form-template-screenshot.png)
-
-***
-
-In this version is a new dashboad Builder been integrated:
-
-![builder-form-template](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/builder-dashboard-screenshot.png)
-
 
 ## Docs
 
