@@ -42,6 +42,11 @@ Load plugin with route params in your application:
 bin/cake plugin load -r Builder
 ```
 
+Complete the installation using the Builder console:
+```
+bin/cake builder setup
+```
+
 ## Docs
 
 For more informations about installation and configuration options, see the [WIKI](https://github.com/aoliverio/builder/wiki).

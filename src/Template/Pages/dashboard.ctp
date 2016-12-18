@@ -1,4 +1,12 @@
 <?php
+
+use Cake\Cache\Cache;
+use Cake\Core\Configure;
+use Cake\Core\Plugin;
+use Cake\Datasource\ConnectionManager;
+use Cake\Error\Debugger;
+use Cake\Network\Exception\NotFoundException;
+
 /**
  * Set page title
  */
@@ -14,7 +22,7 @@ $number_of_users = TableRegistry::get('Builder.Users')->find()->count();
 $number_of_tasks = TableRegistry::get('Builder.Roles')->find()->count();
 ?>
 
-
+<h4>Role-Based Access Control</h4>
 <div class="row">
     <div class="col-md-4">
         <div class="alert alert-warning">
@@ -44,29 +52,75 @@ $number_of_tasks = TableRegistry::get('Builder.Roles')->find()->count();
         </div>
     </div>
 </div>
+<hr/>
 
-<div class="row">
-    <div class="col-md-8">
-        <div class="panel panel-primary">
-            <div class="panel-heading"><i class="fa fa-terminal"></i> <?= __('Cake Shell') ?></div>
-            <div class="panel-body">
-                <label><?= __('Enter shell commands and press "Enter" or click "Run Commands"') ?></label>
-                <textarea class="form-control" placeholder="Insert shell command and press 'Enter' or click 'Run Commands'" rows="6"></textarea>
-                <br/>
-                <div class="text-right">
-                    <button class="btn btn-primary"><i class="fa fa-cogs"></i> Run Commands</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="alert alert-info">
-            <h4 class="page-header"><i class="fa fa-wikipedia-w"></i> Wiki</h4>
-            <ul>
-                <li><a href="https://github.com/aoliverio/builder/wiki/features" target="_blank">Features</a></li>
-                <li><a href="https://github.com/aoliverio/builder/wiki/basic-settings" target="_blank">Basic Settings</a></li>
-                <li><a href="https://github.com/aoliverio/builder/wiki/how-to-use" target="_blank">How to use Builder</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+<h4>Database</h4>
+<?php
+try {
+    $connection = ConnectionManager::get('default');
+    $connected = $connection->connect();
+} catch (Exception $connectionError) {
+    $connected = false;
+    $errorMsg = $connectionError->getMessage();
+    if (method_exists($connectionError, 'getAttributes')):
+        $attributes = $connectionError->getAttributes();
+        if (isset($errorMsg['message'])):
+            $errorMsg .= '<br />' . $attributes['message'];
+        endif;
+    endif;
+}
+?>
+<?php if ($connected) : ?>
+    <p class="alert alert-success">CakePHP is able to connect to the database.</p>
+<?php else: ?>
+    <p class="alert alert-danger">CakePHP is NOT able to connect to the database.<br /><?= $errorMsg ?></p>
+<?php endif; ?>
+<hr/>
+
+
+<h4>Environment</h4>
+<?php if (version_compare(PHP_VERSION, '5.5.9', '>=')): ?>
+    <p class="alert alert-success">Your version of PHP is 5.5.9 or higher (detected <?= PHP_VERSION ?>).</p>
+<?php else: ?>
+    <p class="alert alert-danger">Your version of PHP is too low. You need PHP 5.5.9 or higher to use CakePHP (detected <?= PHP_VERSION ?>).</p>
+<?php endif; ?>
+<?php if (extension_loaded('mbstring')): ?>
+    <p class="alert alert-success">Your version of PHP has the mbstring extension loaded.</p>
+<?php else: ?>
+    <p class="alert alert-danger">Your version of PHP does NOT have the mbstring extension loaded.</p>;
+<?php endif; ?>
+<?php if (extension_loaded('openssl')): ?>
+    <p class="alert alert-success">Your version of PHP has the openssl extension loaded.</p>
+<?php elseif (extension_loaded('mcrypt')): ?>
+    <p class="alert alert-success">Your version of PHP has the mcrypt extension loaded.</p>
+<?php else: ?>
+    <p class="alert alert-danger">Your version of PHP does NOT have the openssl or mcrypt extension loaded.</p>
+<?php endif; ?>
+<?php if (extension_loaded('intl')): ?>
+    <p class="alert alert-success">Your version of PHP has the intl extension loaded.</p>
+<?php else: ?>
+    <p class="alert alert-danger">Your version of PHP does NOT have the intl extension loaded.</p>
+<?php endif; ?>
+<hr/>
+
+
+<h4>Filesystem</h4>
+<?php if (is_writable(TMP)): ?>
+    <p class="alert alert-success">Your tmp directory is writable.</p>
+<?php else: ?>
+    <p class="alert alert-danger">Your tmp directory is NOT writable.</p>
+<?php endif; ?>
+<?php if (is_writable(LOGS)): ?>
+    <p class="alert alert-success">Your logs directory is writable.</p>
+<?php else: ?>
+    <p class="alert alert-danger">Your logs directory is NOT writable.</p>
+<?php endif; ?>
+<?php $settings = Cache::config('_cake_core_'); ?>
+<?php if (!empty($settings)): ?>
+    <p class="alert alert-success">The <em><?= $settings['className'] ?>Engine</em> is being used for core caching. To change the config edit config/app.php</p>
+<?php else: ?>
+    <p class="alert alert-danger">Your cache is NOT working. Please check the settings in config/app.php</p>
+<?php endif; ?>
+
+    
+    
