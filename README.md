@@ -47,6 +47,25 @@ Complete the installation using the Builder console:
 bin/cake builder setup
 ```
 
+## Screenshot
+
+The last version was called "Monument Valley", from the image that appears at login. 
+
+![builder-login-area](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/login-area-screenshot.png)
+
+***
+
+This version uses popup element for ADD/EDIT/DELETE/FILTER actions:
+
+![builder-form-template](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/form-template-screenshot.png)
+
+***
+
+In this version is a new dashboad Builder been integrated:
+
+![builder-form-template](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/builder-dashboard-screenshot.png)
+
+
 ## Docs
 
 For more informations about installation and configuration options, see the [WIKI](https://github.com/aoliverio/builder/wiki).
