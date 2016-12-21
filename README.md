@@ -12,7 +12,7 @@ Some of the highlights:
 - Used DataTables JQuery plugin for table in the index template.
 - Integrated simple Role-Based Access Controll.
 
-The last version was called "Monument Valley", from the image that appears at login. 
+The last version was called "**Monument Valley**", from the image that appears at login. 
 
 ![builder-login-area](https://raw.githubusercontent.com/aoliverio/builder/master/docs/images/login-area-screenshot.png)
 
