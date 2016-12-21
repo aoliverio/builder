@@ -64,6 +64,42 @@ Complete the installation using the Builder console:
 bin/cake builder setup
 ```
 
+### Complete installation
+
+Edit initialize function in src/Controller/AppController, it requires no change to the standard behavior.
+```php
+namespace App\Controller;
+
+use Builder\Controller\AppController as Controller;
+
+class AppController extends Controller {
+    public function initialize() {
+        parent::initialize();
+        
+        // YOUR CODE HERE
+    }
+}
+```
+
+Edit initialize function in src/View/AppView, as follows:
+```php
+namespace App\View;
+
+use Builder\View\View;
+
+class AppView extends View {
+    public function initialize() {
+        parent::initialize();
+        
+        // YOUR CODE HERE
+    }
+}
+```
+
+### Test installation
+
+To check the correct functioning go to the url (for example [http://localhost/your-app/builder](http://localhost/your-app/builder)), and insert default credentials, username: **admin@admin.com** and password: **admin**. The system is ready to be used.  
+
 ## Docs
 
 For more informations about installation and configuration options, see the [WIKI](https://github.com/aoliverio/builder/wiki).
