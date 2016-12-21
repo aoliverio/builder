@@ -39,11 +39,15 @@ The Builder plugin using this third-party libraries, managed with bower:
 
 You can install this plugin into your CakePHP application using [composer](http://getcomposer.org).
 
+### Prerequisites
+
 If Composer is installed, run to create your CakePHP project:
 ```
 php composer.phar create-project --prefer-dist cakephp/app [your-project]  
 ```
 Set database connection in /config/app.php, before proceeding with the installation of the Builder.
+
+### Plugin installation
 
 The recommended way to install composer packages is:
 ```
