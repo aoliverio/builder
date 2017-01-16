@@ -26,19 +26,19 @@ $number_of_tasks = TableRegistry::get('Builder.Roles')->find()->count();
 <div class="row">
     <div class="col-md-4">
         <div class="alert alert-warning">
-            <span class="pull-left"><i class="fa fa-4x fa-puzzle-piece"></i></span>
-            <div class="text-right">
-                <span class="badge"><?= $number_of_roles ?></span>
-                <h4><a href="<?= $this->Url->build(['controller' => 'roles']) ?>"><?= __('Roles') ?></a></h4>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="alert alert-warning">
             <span class="pull-left"><i class="fa fa-4x fa-user"></i></span>
             <div class="text-right">
                 <span class="badge"><?= $number_of_users ?></span>
                 <h4><a href="<?= $this->Url->build(['controller' => 'users']) ?>"><?= __('Users') ?></a></h4>
+            </div>
+        </div>
+    </div>    
+    <div class="col-md-4">
+        <div class="alert alert-warning">
+            <span class="pull-left"><i class="fa fa-4x fa-puzzle-piece"></i></span>
+            <div class="text-right">
+                <span class="badge"><?= $number_of_roles ?></span>
+                <h4><a href="<?= $this->Url->build(['controller' => 'roles']) ?>"><?= __('Roles') ?></a></h4>
             </div>
         </div>
     </div>
