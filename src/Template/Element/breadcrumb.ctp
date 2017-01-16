@@ -25,7 +25,7 @@ if (trim($this->request['plugin']) != '') {
     array_push($breadcrumb, [
         'class' => '',
         'href' => $this->Url->build('/' . Inflector::slug(trim($this->request['plugin']))),
-        'label' => Inflector::humanize(trim($this->request['plugin']))
+        'label' => trim($this->request['plugin'])
     ]);
 }
 
@@ -36,29 +36,30 @@ if (trim($this->request['controller']) != 'Pages') {
     array_push($breadcrumb, [
         'class' => '',
         'href' => $this->Url->build(['controller' => Inflector::slug(trim($this->request['controller'])), 'action' => 'index']),
-        'label' => Inflector::humanize(trim($this->request['controller']))
+        'label' => trim($this->request['controller'])
     ]);
 
     array_push($breadcrumb, [
         'class' => 'active',
         'href' => '',
-        'label' => Inflector::humanize(trim($this->request['action']))
+        'label' => trim($this->request['action'])
     ]);
 } else {
     array_push($breadcrumb, [
         'class' => 'active',
         'href' => '',
-        'label' => Inflector::humanize(trim($this->request->params['pass'][0]))
+        'label' => trim($this->request->params['pass'][0])
     ]);
 }
 ?>
 <ol class="breadcrumb">
     <?php
     foreach ($breadcrumb as $row) :
+        $label = Inflector::humanize(str_replace('-', ' ', $row['label']));
         if ($row['class'] == 'active')
-            echo '<li class="active">' . $row['label'] . '</li>';
+            echo '<li class="active">' . $label . '</li>';
         else
-            echo '<li><a href="' . $row['href'] . '">' . $row['label'] . '</a></li>';
+            echo '<li><a href="' . $row['href'] . '">' . $label . '</a></li>';
     endforeach;
     ?> 
 </ol>
