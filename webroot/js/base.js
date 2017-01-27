@@ -9,6 +9,11 @@ $(document).ready(function () {
      * DATATABLES - dataTable default builder constructor
      */
     $('.dataTable').dataTable();
+    
+    /**
+     * WYSIWYG - Use summernote
+     */
+    $('.summernote').summernote();
 
     /**
      * MODAL - myModal default constructor
