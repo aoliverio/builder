@@ -13,7 +13,9 @@ $(document).ready(function () {
     /**
      * WYSIWYG - Use summernote
      */
-    $('.summernote').summernote();
+    $('.summernote').summernote({
+        height: 300
+    });
 
     /**
      * MODAL - myModal default constructor

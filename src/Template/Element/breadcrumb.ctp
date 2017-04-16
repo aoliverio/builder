@@ -45,11 +45,13 @@ if (trim($this->request['controller']) != 'Pages') {
         'label' => trim($this->request['action'])
     ]);
 } else {
-    array_push($breadcrumb, [
-        'class' => 'active',
-        'href' => '',
-        'label' => trim($this->request->params['pass'][0])
-    ]);
+    if(isset($this->request->params['pass'][0])){
+        array_push($breadcrumb, [
+            'class' => 'active',
+            'href' => '',
+            'label' => trim($this->request->params['pass'][0])
+        ]);
+    }
 }
 ?>
 <ol class="breadcrumb">
