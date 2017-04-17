@@ -9,17 +9,16 @@ $(document).ready(function () {
      * DATATABLES - dataTable default builder constructor
      */
     $('.dataTable').dataTable();
-    
+
     /**
      * WYSIWYG - Use summernote
      */
     $('.summernote').summernote({
-        height: 300
+        minHeight: 300
     });
 
     /**
      * MODAL - myModal default constructor
-     * 
      * Changes default for the modal plugin's 'keyboard' option to false
      */
     $.fn.modal.Constructor.DEFAULTS.keyboard = false;
@@ -35,13 +34,11 @@ $(document).ready(function () {
         $('.modal-content').prepend('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
 
         /**
-         * 
+         * MyModal form submit
          */
         $('form').submit(function (event) {
 
-            /**
-             * stop form from submitting normally
-             */
+            // stop form from submitting normally
             event.preventDefault();
             var formData = new FormData($(this)[0]);
             var formAction = $(this).attr('action');
@@ -57,14 +54,10 @@ $(document).ready(function () {
                 console.log(data);
             });
 
-            /**
-             * myModal hide
-             */
+            // myModal hide
             $('#myModal').modal('hide');
 
-            /**
-             * Page reload
-             */
+            // Page reload
             location.reload();
         });
     });
@@ -75,25 +68,4 @@ $(document).ready(function () {
     $('#myModal').on('hidden.bs.modal', function (e) {
         $(this).removeData('bs.modal');
     });
-
-    /**
-     * TABS - myTabs default constructor
-     * 
-     * Used to enable link to tab 
-     */
-    $('#myTabs a:first').tab('show');
-    var url = document.location.toString();
-    if (url.match('#')) {
-        var tabId = url.split('#')[1];
-        $('#myTabs a[href=#' + tabId + ']').tab('show');
-    }
-
-    /**
-     * Change hash for page-reload
-     */
-    $('.nav-tabs a').on('shown.bs.tab', function (e) {
-        window.location.hash = e.target.hash;
-    });
 });
-
-

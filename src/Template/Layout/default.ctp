@@ -9,8 +9,6 @@
         <?= $this->fetch('builder-css') ?>
         <?= $this->Html->css('Builder.default') ?>
         <?= $this->fetch('css') ?>
-        <!-- Builder and app scripts -->
-        <?= $this->fetch('builder-script') ?>
     </head>
     <body>
         <!-- Nav Block -->
@@ -39,6 +37,8 @@
                 </div>
             </div>
         </footer>
+        <!-- Builder and app scripts -->
+        <?= $this->fetch('builder-script') ?>
         <!-- Builder base element -->
         <?= $this->fetch('builder-element') ?>
         <!-- App scripts -->
