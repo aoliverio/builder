@@ -25,7 +25,7 @@ if (trim($this->request['plugin']) != '') {
     array_push($breadcrumb, [
         'class' => '',
         'href' => $this->Url->build('/' . trim($this->request['plugin'])),
-        'label' => Inflector::humanize(Inflector::tableize(trim($this->request['plugin'])))
+        'label' => Inflector::humanize(trim($this->request['plugin']))
     ]);
 }
 
@@ -36,20 +36,20 @@ if (trim($this->request['controller']) != 'Pages') {
     array_push($breadcrumb, [
         'class' => '',
         'href' => $this->Url->build(['controller' => trim($this->request['controller']), 'action' => 'index']),
-        'label' => Inflector::humanize(Inflector::tableize(trim($this->request['controller'])))
+        'label' => Inflector::humanize(trim($this->request['controller']))
     ]);
 
     array_push($breadcrumb, [
         'class' => 'active',
         'href' => '',
-        'label' => Inflector::humanize(Inflector::tableize(trim($this->request['action'])))
+        'label' => Inflector::humanize(trim($this->request['action']))
     ]);
 } else {
     if (isset($this->request->params['pass'][0])) {
         array_push($breadcrumb, [
             'class' => 'active',
             'href' => '',
-            'label' => Inflector::humanize(Inflector::tableize(trim($this->request->params['pass'][0])))
+            'label' => Inflector::humanize(trim($this->request->params['pass'][0]))
         ]);
     }
 }
