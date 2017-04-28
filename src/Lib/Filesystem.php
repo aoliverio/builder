@@ -17,11 +17,12 @@ namespace Builder\Lib;
 use Cake\Filesystem\Folder;
 use Cake\Filesystem\File;
 use Cake\Utility\Inflector;
+use Cake\Core\Configure;
 
 /**
  * This class is used to manage and organize files in the filesystem
  */
-class File {
+class Filesystem {
 
     /**
      * Upload and organize file in /uploads/YEAR/MONTH directory
@@ -62,7 +63,7 @@ class File {
         $folder_dest->cd($CONTENT_MONTH);
 
         $path = DS . $CONTENT_YEAR . DS . $CONTENT_MONTH . DS;
-        $permittedFilename = $this->_permittedFileName($UPLOAD_DIR . $path, $filename);
+        $permittedFilename = $this->getPermittedFileName($UPLOAD_DIR . $path, $filename);
         $destfile = $folder_dest->pwd() . DS . $permittedFilename;
 
         /**
