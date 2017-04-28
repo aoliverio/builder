@@ -24,8 +24,8 @@ endif;
 if (trim($this->request['plugin']) != '') {
     array_push($breadcrumb, [
         'class' => '',
-        'href' => $this->Url->build('/' . Inflector::slug(trim($this->request['plugin']))),
-        'label' => trim($this->request['plugin'])
+        'href' => $this->Url->build('/' . trim($this->request['plugin'])),
+        'label' => Inflector::humanize(Inflector::tableize(trim($this->request['plugin'])))
     ]);
 }
 
@@ -35,21 +35,21 @@ if (trim($this->request['plugin']) != '') {
 if (trim($this->request['controller']) != 'Pages') {
     array_push($breadcrumb, [
         'class' => '',
-        'href' => $this->Url->build(['controller' => Inflector::slug(trim($this->request['controller'])), 'action' => 'index']),
-        'label' => trim($this->request['controller'])
+        'href' => $this->Url->build(['controller' => trim($this->request['controller']), 'action' => 'index']),
+        'label' => Inflector::humanize(Inflector::tableize(trim($this->request['controller'])))
     ]);
 
     array_push($breadcrumb, [
         'class' => 'active',
         'href' => '',
-        'label' => trim($this->request['action'])
+        'label' => Inflector::humanize(Inflector::tableize(trim($this->request['action'])))
     ]);
 } else {
-    if(isset($this->request->params['pass'][0])){
+    if (isset($this->request->params['pass'][0])) {
         array_push($breadcrumb, [
             'class' => 'active',
             'href' => '',
-            'label' => trim($this->request->params['pass'][0])
+            'label' => Inflector::humanize(Inflector::tableize(trim($this->request->params['pass'][0])))
         ]);
     }
 }
@@ -57,7 +57,7 @@ if (trim($this->request['controller']) != 'Pages') {
 <ol class="breadcrumb">
     <?php
     foreach ($breadcrumb as $row) :
-        $label = Inflector::humanize(str_replace('-', ' ', $row['label']));
+        $label = Inflector::humanize($row['label']);
         if ($row['class'] == 'active')
             echo '<li class="active">' . $label . '</li>';
         else
