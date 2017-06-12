@@ -3,6 +3,7 @@
 namespace Builder\Controller;
 
 use Cake\Controller\Controller as BaseController;
+use Cake\Core\Configure;
 
 /**
  * 
@@ -14,6 +15,12 @@ class AppController extends BaseController {
      */
     public function initialize() {
         parent::initialize();
+
+        /**
+         * Set template theme
+         */
+        if (Configure::check('Builder.theme'))
+            $this->viewBuilder()->theme(Configure::read('Builder.theme'));
 
         /**
          * Load required components
@@ -29,7 +36,12 @@ class AppController extends BaseController {
         /**
          * Allow only display action without sign in.
          */
-        $this->Auth->allow(['display']);
+        $this->Auth->allow(['']);
+
+        /**
+         * Set $UserLoggedInfo
+         */
+        $this->set('UserLoggedInfo', $this->Auth->user());
     }
 
     /**
