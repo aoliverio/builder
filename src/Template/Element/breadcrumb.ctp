@@ -1,6 +1,7 @@
 <?php
 
 use Cake\Utility\Inflector;
+use Cake\Core\Configure;
 
 /**
  * 
@@ -13,8 +14,8 @@ $breadcrumb = [];
 if (trim($this->request->url) != ''):
     array_push($breadcrumb, [
         'class' => '',
-        'href' => $this->Url->build('/'),
-        'label' => __('Home')
+        'href' => $this->Url->build(Configure::read('Builder.dashboard_url')),
+        'label' => __('Dashboard')
     ]);
 endif;
 
@@ -56,12 +57,17 @@ if (trim($this->request['controller']) != 'Pages') {
 ?>
 <ol class="breadcrumb">
     <?php
+    $iter = 1;
     foreach ($breadcrumb as $row) :
-        $label = Inflector::humanize($row['label']);
+        if ($iter == 1)
+            $label = '<i class="fa fa-dashboard"></i>' . __('Dashboard');
+        else
+            $label = Inflector::humanize($row['label']);
         if ($row['class'] == 'active')
             echo '<li class="active">' . $label . '</li>';
         else
-            echo '<li><a href="' . $row['href'] . '">' . $label . '</a></li>';
+            echo '<li><a href="' . strtolower($row['href']) . '">' . $label . '</a></li>';
+        $iter++;
     endforeach;
     ?> 
 </ol>
