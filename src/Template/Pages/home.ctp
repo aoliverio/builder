@@ -20,41 +20,45 @@ use Cake\ORM\TableRegistry;
 $number_of_roles = TableRegistry::get('Builder.Roles')->find()->count();
 $number_of_users = TableRegistry::get('Builder.Users')->find()->count();
 $number_of_tasks = TableRegistry::get('Builder.Roles')->find()->count();
+
+/**
+ * Set layout TITLE
+ */
+$this->assign('title', __('Builder'));
+$this->assign('subheading', __('Admin Area'));
 ?>
 
-<h4>Role-Based Access Control</h4>
+<div class="alert alert-info">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h3><?= __('Welcome on Builder!') ?></h3>
+    <small><?= __('The system area for your application in CakePHP.') ?></small>
+</div>
+
 <div class="row">
-    <div class="col-md-4">
-        <div class="alert alert-warning">
-            <span class="pull-left"><i class="fa fa-4x fa-user"></i></span>
-            <div class="text-right">
-                <span class="badge"><?= $number_of_users ?></span>
-                <h4><a href="<?= $this->Url->build(['controller' => 'users']) ?>"><?= __('Users') ?></a></h4>
-            </div>
+    <div class="col-md-6">
+        <h4><?= __('Role-Based Access Control') ?></h4>
+        <div class="well well-sm">
+            <h3 class="pull-right"><span class="label label-default"><?= $number_of_users ?></span></h3>
+            <h3><i class="fa fa-user fa-fw"></i> <a href="<?= $this->Url->build(['controller' => 'users']) ?>"><?= __('Users') ?></a></h3>
         </div>
-    </div>    
-    <div class="col-md-4">
-        <div class="alert alert-warning">
-            <span class="pull-left"><i class="fa fa-4x fa-puzzle-piece"></i></span>
-            <div class="text-right">
-                <span class="badge"><?= $number_of_roles ?></span>
-                <h4><a href="<?= $this->Url->build(['controller' => 'roles']) ?>"><?= __('Roles') ?></a></h4>
-            </div>
+        <div class="well well-sm">
+            <h3 class="pull-right"><span class="label label-default"><?= $number_of_roles ?></span></h3>
+            <h3><i class="fa fa-puzzle-piece fa-fw"></i> <a href="<?= $this->Url->build(['controller' => 'roles']) ?>"><?= __('Roles') ?></a></h3>
+        </div>
+        <div class="well well-sm">
+            <h3 class="pull-right"><span class="label label-default"><?= $number_of_tasks ?></span></h3>
+            <h3><i class="fa fa-tasks fa-fw"></i> <a href="<?= $this->Url->build(['controller' => 'tasks']) ?>"><?= __('Tasks') ?></a></h3>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="alert alert-warning">
-            <span class="pull-left"><i class="fa fa-4x fa-tasks"></i></span>
-            <div class="text-right">
-                <span class="badge"><?= $number_of_tasks ?></span><br/>
-                <h4><a href="<?= $this->Url->build(['controller' => 'tasks']) ?>"><?= __('Tasks') ?></a></h4>
-            </div>
-        </div>
-    </div>
+    <div class="col-md-6"></div>
 </div>
 <hr/>
-
-<h4>Database</h4>
+<h4><?= __('Loaded Plugin') ?></h4>
+<?php foreach (Plugin::loaded() as $row): ?>
+    <p class="alert alert-warning"><a href="<?= $this->Url->build('/' . $row) ?>"><?= $row ?></a></p>
+<?php endforeach; ?>
+<hr/>
+<h4><?= __('Database') ?></h4>
 <?php
 try {
     $connection = ConnectionManager::get('default');
@@ -78,7 +82,7 @@ try {
 <hr/>
 
 
-<h4>Environment</h4>
+<h4><?= __('Environment') ?></h4>
 <?php if (version_compare(PHP_VERSION, '5.5.9', '>=')): ?>
     <p class="alert alert-success">Your version of PHP is 5.5.9 or higher (detected <?= PHP_VERSION ?>).</p>
 <?php else: ?>
@@ -104,7 +108,7 @@ try {
 <hr/>
 
 
-<h4>Filesystem</h4>
+<h4><?= __('Filesystem') ?></h4>
 <?php if (is_writable(TMP)): ?>
     <p class="alert alert-success">Your tmp directory is writable.</p>
 <?php else: ?>
@@ -121,6 +125,3 @@ try {
 <?php else: ?>
     <p class="alert alert-danger">Your cache is NOT working. Please check the settings in config/app.php</p>
 <?php endif; ?>
-
-    
-    
