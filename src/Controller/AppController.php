@@ -31,17 +31,11 @@ class AppController extends BaseController {
         /**
          * Use cake Auth component
          */
-        $this->loadComponent('Auth', \Builder\Lib\Auth::getDefaultSettings());
-
-        /**
-         * Allow only display action without sign in.
-         */
-        $this->Auth->allow(['']);
-
-        /**
-         * Set $UserLoggedInfo
-         */
-        $this->set('UserLoggedInfo', $this->Auth->user());
+        if (Configure::check('Builder.use_default_auth')):
+            $this->loadComponent('Auth', \Builder\Lib\Auth::getDefaultSettings());
+            $this->set('UserLoggedInfo', $this->Auth->user());
+            $this->Auth->allow(['']);
+        endif;
     }
 
     /**
