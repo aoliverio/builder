@@ -13,6 +13,6 @@ Router::plugin('Builder', function ($routes) {
  * Display home by default
  */
 Router::scope('/', function ($routes) {
-    $routes->connect('/builder', ['plugin' => 'Builder', 'controller' => 'Pages', 'action' => 'view', 'dashboard']);
-    $routes->connect('/Builder', ['plugin' => 'Builder', 'controller' => 'Pages', 'action' => 'view', 'dashboard']);
+    $routes->connect('/builder', ['plugin' => 'Builder', 'controller' => 'Pages', 'action' => 'display', 'home']);
+    $routes->connect('/Builder', ['plugin' => 'Builder', 'controller' => 'Pages', 'action' => 'display', 'home']);
 });
