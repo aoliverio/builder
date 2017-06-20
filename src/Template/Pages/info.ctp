@@ -10,7 +10,7 @@ use Cake\Network\Exception\NotFoundException;
 /**
  * Set layout TITLE
  */
-$this->assign('title', __('Information'));
+$this->assign('title', __('App Information'));
 $this->assign('subheading', __('Builder Area'));
 ?>
 
