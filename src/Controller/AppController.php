@@ -18,13 +18,15 @@ class AppController extends BaseController {
         
         /**
          * Laod i18n translation from /src/Locale/$locale/builder.po
+         * 
+          if (trim($this->request->params['plugin']) === 'Builder'):
+          $locale = Configure::read('App.defaultLocale');
+          I18n::translator(
+          'default', $locale, new Loader('builder', $locale, 'po')
+          );
+          endif;
+         * 
          */
-        if (trim($this->request->params['plugin']) === 'Builder'):
-            $locale = Configure::read('App.defaultLocale');
-            I18n::translator(
-                    'default', $locale, new Loader('builder', $locale, 'po')
-            );
-        endif;
 
         /**
          * Set template theme
