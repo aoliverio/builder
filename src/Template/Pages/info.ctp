@@ -19,7 +19,8 @@ $this->assign('subheading', __('Builder Area'));
     <p class="alert alert-warning"><a href="<?= $this->Url->build('/' . $row) ?>"><?= $row ?></a></p>
 <?php endforeach; ?>
 <hr/>
-<h4><?= __('Database') ?></h4>
+
+<h2 class="page-header"><?= __('Database') ?></h2>
 <?php
 try {
     $connection = ConnectionManager::get('default');
