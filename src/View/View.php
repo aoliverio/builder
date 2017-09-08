@@ -35,12 +35,6 @@ class View extends BaseView {
         $this->loadHelper('Flash', ['className' => 'Builder.Flash']);
 
         /**
-         * Set default layout for App using Layout/default
-         */
-        if ($this->layout === 'default')
-            $this->layout('Builder.default');
-
-        /**
          *  Set form templates
          */
         $_templates = [
