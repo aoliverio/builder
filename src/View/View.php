@@ -35,6 +35,13 @@ class View extends BaseView {
         $this->loadHelper('Flash', ['className' => 'Builder.Flash']);
 
         /**
+         * Set default layout for App
+         */
+        $theme = (Configure::check('Builder.theme')) ? Configure::read('Builder.theme') : '';
+        if (trim($theme) != '')
+            $this->layout($theme . '.' . $this->layout);
+
+        /**
          *  Set form templates
          */
         $_templates = [
@@ -82,6 +89,7 @@ class View extends BaseView {
         echo $this->Html->script([
             '/builder/bower_components/jquery/dist/jquery.min.js',
             '/builder/bower_components/jquery-ui/jquery-ui.min.js',
+            '/builder/bower_components/moment/moment.js',
             '/builder/bower_components/bootstrap/dist/js/bootstrap.min.js',
             '/builder/bower_components/datatables/media/js/jquery.dataTables.min.js',
             '/builder/bower_components/datatables/media/js/dataTables.bootstrap.js',
